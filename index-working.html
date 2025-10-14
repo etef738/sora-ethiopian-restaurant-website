@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sora Ethiopian Restaurant | East York Toronto | Danforth Area</title>
+    <style>
+        /* Inline CSS for guaranteed loading */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fffef7 0%, #f5f5dc 100%);
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2a 100%);
+            color: white;
+            padding: 20px 0;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #D2691E 0%, #ff6b35 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid white;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h2 {
+            font-size: 24px;
+            color: #ff6b35;
+            margin-bottom: 30px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #4a4a4a;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #2d5016;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .btn-teff {
+            background: #D2691E;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-section {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #2d5016;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #6ba83d, #8bc34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .footer {
+            background: #2d5016;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .footer h3 {
+            color: #8bc34a;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 32px;
+            }
+
+            .navigation {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo-container">
+                <div class="logo-circle">
+                    🍽️
+                </div>
+                <div class="logo-text">
+                    Sora ሶራ
+                </div>
+            </div>
+            <div>
+                <span style="color: #8bc34a;">📞 (647) 647-0000</span>
+            </div>
+        </div>
+        <nav class="navigation">
+            <a href="index.html" class="nav-item active">Home ቤት</a>
+            <a href="about.html" class="nav-item">About ስለ እኛ</a>
+            <a href="menu.html" class="nav-item">Menu ምግብ</a>
+            <a href="contact.html" class="nav-item">Contact ግንኙነት</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>🇪🇹 Best Ethiopian Traditional Food in East York Toronto</h1>
+            <h2>Authentic Organic Teff Injera & Indigenous Ingredients in the Heart of Danforth Area</h2>
+            <p>
+                Welcome to Sora Ethiopian Restaurant ሶራ, where we serve the most authentic Ethiopian traditional
+                food in East York Toronto. Located in the vibrant Danforth area, we specialize in organic teff
+                injera, indigenous Ethiopian ingredients, and traditional cooking methods passed down through
+                generations. Experience healthy, non-GMO Ethiopian cuisine with our extensive vegan and fasting food
+                options.
+            </p>
+            <div class="hero-buttons">
+                <a href="menu.html" class="btn btn-primary">🍽️ View Menu & Order</a>
+                <a href="contact.html" class="btn btn-secondary">📅 Reserve Table</a>
+                <a href="about.html" class="btn btn-teff">🌾 Our Teff Story</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">Why Choose Sora Ethiopian Restaurant in East York Toronto? 🌟</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🌾</div>
+                    <h3 class="feature-title">100% Organic Teff Injera</h3>
+                    <p class="feature-description">
+                        Authentic teff injera made from premium organic teff grain, naturally gluten-free and rich in
+                        nutrients. Our traditional fermentation process creates the perfect spongy texture.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Extensive Vegan & Fasting Options</h3>
+                    <p class="feature-description">
+                        Traditional Ethiopian fasting dishes and extensive vegan menu options. Healthy, plant-based
+                        meals that honor centuries-old Ethiopian culinary traditions.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🏠</div>
+                    <h3 class="feature-title">Authentic Ethiopian Heritage</h3>
+                    <p class="feature-description">
+                        Family recipes and traditional cooking methods from Ethiopia. Indigenous spices and ingredients
+                        imported directly from Ethiopian highlands for authentic flavors.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <h3 class="feature-title">Prime East York Location</h3>
+                    <p class="feature-description">
+                        Conveniently located on Danforth Avenue in East York Toronto. Easy TTC access, parking
+                        available, serving the diverse Danforth area community.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">☕</div>
+                    <h3 class="feature-title">Traditional Coffee Ceremony</h3>
+                    <p class="feature-description">
+                        Experience authentic Ethiopian coffee culture with our traditional coffee ceremony. Fresh
+                        roasted beans, ceremonial brewing, cultural storytelling.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💚</div>
+                    <h3 class="feature-title">Healthy & Non-GMO</h3>
+                    <p class="feature-description">
+                        All ingredients are organic, non-GMO, and sourced responsibly. Healthy Ethiopian cuisine that
+                        nourishes body and soul with traditional nutritional wisdom.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Highlights -->
+        <section
+            style="background: white; padding: 60px 40px; border-radius: 20px; margin: 80px 0; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            <h2 style="color: #2d5016; margin-bottom: 30px; font-size: 36px;">🎉 Special Ethiopian Experience</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px;">
+                <div>
+                    <h3 style="color: #ff6b35; margin-bottom: 15px;">🚚 East York Delivery</h3>
+                    <p>Fast delivery throughout East York Toronto and Danforth area. Fresh Ethiopian food delivered to
+                        your door.</p>
+                </div>
+                <div>
+                    <h3 style="color: #ff6b35; margin-bottom: 15px;">🎊 Catering Services</h3>
+                    <p>Authentic Ethiopian catering for events, parties, and corporate functions. Traditional coffee
+                        ceremony available.</p>
+                </div>
+                <div>
+                    <h3 style="color: #ff6b35; margin-bottom: 15px;">🌿 Vegan Friendly</h3>
+                    <p>Extensive plant-based menu with traditional Ethiopian fasting dishes. Perfect for vegans and
+                        health-conscious diners.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>🍽️ Sora Ethiopian Restaurant ሶራ</h3>
+                <p style="margin-bottom: 20px;">Authentic Ethiopian traditional food in East York Toronto. Organic teff
+                    injera, vegan dishes, indigenous ingredients.</p>
+                <p><strong>📍 1585 Danforth Avenue<br>East York, Toronto, ON M4J 1N2</strong></p>
+            </div>
+
+            <div>
+                <h3>📞 Contact & Hours</h3>
+                <p><strong>Phone:</strong> (647) 647-0000</p>
+                <p><strong>Email:</strong> orders@soraethiopian.com</p>
+                <p style="margin-top: 15px;"><strong>Hours:</strong><br>Monday - Sunday<br>10:00 AM - 11:00 PM</p>
+            </div>
+
+            <div>
+                <h3>🚚 Services</h3>
+                <p>✅ Dine-in & Takeout<br>✅ East York Delivery<br>✅ Catering Services<br>✅ Ethiopian Coffee
+                    Ceremony<br>✅ Vegan & Vegetarian Options</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Sora Ethiopian Restaurant ሶራ - Authentic Ethiopian Food | East York Toronto | Danforth Area
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

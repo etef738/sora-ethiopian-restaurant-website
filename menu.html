@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu & Order - Organic Teff Injera & Vegan Ethiopian Food | Sora Ethiopian Restaurant Toronto</title>
+    <meta name="description"
+        content="Order authentic Ethiopian food online: organic teff injera, traditional vegan dishes, fasting food, healthy vegetarian options. Best Ethiopian menu in East York Toronto, Danforth area. Non-GMO teff products & indigenous ingredients.">
+    <meta name="keywords"
+        content="Ethiopian food menu Toronto, organic teff injera order, vegan Ethiopian dishes, Ethiopian fasting food menu, vegetarian Ethiopian restaurant, healthy Ethiopian cuisine, non-GMO teff products, traditional Ethiopian menu, East York Ethiopian delivery, Danforth Ethiopian food order, Ethiopian coffee ceremony, indigenous Ethiopian spices">
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="web.css">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo-container">
+                <div class="logo-circle">
+                    <i class="fas fa-utensils" style="color: white; font-size: 24px;"></i>
+                </div>
+                <div class="logo-text">
+                    Sora <span class="amharic">ሶራ</span>
+                </div>
+            </div>
+            <div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="user-cart">
+                    <a href="#" class="icon" aria-label="User Account"><i class="fas fa-user"></i></a>
+                    <a href="#" class="icon" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="navigation">
+            <a href="index.html" class="nav-item">
+                Home <span class="ethiopic-text nav-ethiopic">ቤት</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                About <span class="ethiopic-text nav-ethiopic">ስለ እኛ</span>
+            </a>
+            <a href="menu.html" class="nav-item active">
+                Menu <span class="ethiopic-text nav-ethiopic">ምግብ</span>
+            </a>
+            <a href="contact.html" class="nav-item">
+                Contact <span class="ethiopic-text nav-ethiopic">ግንኙነት</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Menu Section -->
+        <section class="hero-menu scroll-reveal">
+            <div class="hero-content">
+                <h1>Organic Teff Injera & Traditional Ethiopian Food Menu</h1>
+                <h2>Authentic Vegan, Vegetarian & Fasting Food in East York Toronto</h2>
+                <p>
+                    Explore our comprehensive menu of traditional Ethiopian cuisine featuring 100% organic teff injera,
+                    extensive vegan and vegetarian options, authentic fasting dishes, and indigenous Ethiopian
+                    ingredients. All our teff products are non-GMO and prepared using traditional methods. Order online
+                    for delivery throughout East York Toronto and the Danforth area.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#vegan-section" class="btn btn-primary">Vegan & Fasting Menu</a>
+                    <a href="#main-section" class="btn btn-secondary">Traditional Dishes</a>
+                    <a href="#teff-section" class="btn btn-teff">Organic Teff Products</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--ethiopian-gold) 0%, var(--ethiopian-red) 50%, var(--accent-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 28px; text-align: center; flex-direction: column;">
+                    <i class="fas fa-leaf" style="font-size: 64px; margin-bottom: 20px;"></i>
+                    Fresh Organic Ingredients<br>Traditional Ethiopian Flavors
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section scroll-reveal">
+            <h2 class="section-title">Ethiopian Food Categories - Healthy, Organic, Traditional</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--accent-green) 0%, var(--light-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; flex-direction: column;">
+                            <i class="fas fa-seedling" style="font-size: 48px; margin-bottom: 10px;"></i>
+                            Vegan & Fasting
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Vegan & Ethiopian Fasting Dishes</h3>
+                        <p class="category-description">Traditional plant-based Ethiopian dishes perfect for fasting
+                            periods and vegan diets</p>
+                        <a href="#vegan-section" class="category-btn">View Vegan Menu</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--teff-brown) 0%, var(--ethiopian-gold) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; flex-direction: column;">
+                            <i class="fas fa-bread-slice" style="font-size: 48px; margin-bottom: 10px;"></i>
+                            Organic Teff Injera
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">100% Organic Teff Products</h3>
+                        <p class="category-description">Authentic teff injera and products made from premium organic
+                            Ethiopian teff grain</p>
+                        <a href="#teff-section" class="category-btn">Order Teff Products</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--ethiopian-red) 0%, var(--ethiopian-gold) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; flex-direction: column;">
+                            <i class="fas fa-drumstick-bite" style="font-size: 48px; margin-bottom: 10px;"></i>
+                            Traditional Meat Dishes
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-title">Traditional Ethiopian Meat Dishes</h3>
+                        <p class="category-description">Authentic meat preparations with indigenous spices and
+                            traditional cooking methods</p>
+                        <a href="#main-section" class="category-btn">Order Main Dishes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vegan & Fasting Specials Section -->
+        <section class="menu-section scroll-reveal" id="vegan-section">
+            <h2>Vegan & Ethiopian Fasting Food Menu - Healthy Vegetarian Options</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--accent-green) 0%, var(--light-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-leaf" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Beyayenetu Kuret
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Traditional Vegan Beyayenetu Kuret</h3>
+                        <p class="menu-item-description">Authentic Ethiopian fasting platter with organic vegetables and
+                            teff injera</p>
+                        <div class="menu-item-price">$17.00</div>
+                        <a href="#" class="menu-item-btn">Order Vegan Platter</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--secondary-green) 0%, var(--accent-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-carrot" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Meson Beyayenetu
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Premium Vegetarian Mixed Platter</h3>
+                        <p class="menu-item-description">Extensive vegetarian combination with indigenous Ethiopian
+                            vegetables</p>
+                        <div class="menu-item-price">$25.99</div>
+                        <a href="#" class="menu-item-btn">Order Vegetarian Feast</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--light-green) 0%, #a5d6a7 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-seedling" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Shiro Wot
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Traditional Shiro Wot (Chickpea Stew)</h3>
+                        <p class="menu-item-description">Rich, healthy chickpea stew with authentic berbere spices</p>
+                        <div class="menu-item-price">$14.99</div>
+                        <a href="#" class="menu-item-btn">Order Shiro</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--accent-green) 0%, var(--secondary-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-pepper-hot" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Misir Wot
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Spicy Red Lentil Stew (Misir Wot)</h3>
+                        <p class="menu-item-description">Traditional vegan lentil stew with indigenous Ethiopian spices
+                        </p>
+                        <div class="menu-item-price">$13.99</div>
+                        <a href="#" class="menu-item-btn">Order Lentil Stew</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organic Teff Products Section -->
+        <section class="menu-section scroll-reveal" id="teff-section">
+            <h2>100% Organic Teff Products - Non-GMO Ethiopian Grain</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--teff-brown) 0%, var(--ethiopian-gold) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-bread-slice" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Fresh Teff Injera
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Fresh Organic Teff Injera (Daily)</h3>
+                        <p class="menu-item-description">Traditional fermented teff bread, gluten-free and naturally
+                            healthy</p>
+                        <div class="menu-item-price">$8.99</div>
+                        <a href="#" class="menu-item-btn">Order Fresh Injera</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, #8D6E63 0%, var(--teff-brown) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-boxes" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Take-Home Teff
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Organic Teff Flour (1lb Bag)</h3>
+                        <p class="menu-item-description">Premium organic teff flour for home cooking, non-GMO Ethiopian
+                            grain</p>
+                        <div class="menu-item-price">$12.99</div>
+                        <a href="#" class="menu-item-btn">Buy Teff Flour</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traditional Main Dishes Section -->
+        <section class="menu-section scroll-reveal" id="main-section">
+            <h2>Traditional Ethiopian Main Dishes - Authentic Indigenous Flavors</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--ethiopian-red) 0%, #ff8a65 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-cut" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Sora Kitfo
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Sora Special Kitfo (Ethiopian Steak Tartare)</h3>
+                        <p class="menu-item-description">Premium Ethiopian steak tartare with authentic mitmita and
+                            indigenous spices</p>
+                        <div class="menu-item-price">$25.99</div>
+                        <a href="#" class="menu-item-btn">Order Kitfo</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--primary-green) 0%, var(--secondary-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-drumstick-bite" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Doro Wot
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Traditional Doro Wot (Ethiopian Chicken Stew)</h3>
+                        <p class="menu-item-description">Authentic Ethiopian chicken stew with berbere spice and
+                            hard-boiled eggs</p>
+                        <div class="menu-item-price">$22.99</div>
+                        <a href="#" class="menu-item-btn">Order Doro Wot</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--ethiopian-gold) 0%, var(--ethiopian-red) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-fire" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Tibs
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Ethiopian Tibs (Sautéed Beef)</h3>
+                        <p class="menu-item-description">Traditional sautéed beef with onions, peppers and authentic
+                            Ethiopian seasonings</p>
+                        <div class="menu-item-price">$19.99</div>
+                        <a href="#" class="menu-item-btn">Order Tibs</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--secondary-green) 0%, var(--accent-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; flex-direction: column;">
+                            <i class="fas fa-fish" style="font-size: 32px; margin-bottom: 5px;"></i>
+                            Fish Tibs
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Ethiopian Fish Tibs (Healthy Option)</h3>
+                        <p class="menu-item-description">Fresh fish sautéed with traditional vegetables and indigenous
+                            Ethiopian spices</p>
+                        <div class="menu-item-price">$21.99</div>
+                        <a href="#" class="menu-item-btn">Order Fish Tibs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coffee & Traditional Drinks -->
+        <section class="catering-section scroll-reveal">
+            <div class="catering-content">
+                <h2 class="catering-title">Traditional Ethiopian Coffee Ceremony & Beverages</h2>
+                <div class="catering-grid">
+                    <div class="catering-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--teff-brown) 0%, var(--ethiopian-gold) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; flex-direction: column;">
+                            <i class="fas fa-coffee" style="font-size: 64px; margin-bottom: 15px;"></i>
+                            Ethiopian Coffee<br>
+                            Ceremony Experience
+                        </div>
+                    </div>
+                    <div class="catering-text">
+                        <h3 style="font-size: 32px; color: var(--primary-green); margin-bottom: 20px;">Authentic Coffee
+                            Ceremony</h3>
+                        <p class="catering-description">Traditional Ethiopian coffee roasting and brewing ceremony</p>
+                        <p
+                            style="color: var(--text-medium); margin-bottom: 25px; text-transform: none; letter-spacing: normal; font-size: 16px; line-height: 1.6;">
+                            Experience the authentic Ethiopian coffee ceremony with fresh green beans roasted on-site,
+                            ground by hand, and brewed using traditional methods. Available for special occasions,
+                            cultural events, and catering services throughout the Danforth area and East York Toronto.
+                        </p>
+                        <div class="catering-buttons">
+                            <a href="contact.html" class="btn btn-primary">Book Coffee Ceremony</a>
+                            <a href="#" class="btn btn-secondary">Order Coffee Beans</a>
+                        </div>
+                    </div>
+                    <div class="catering-image">
+                        <div
+                            style="width: 100%; height: 100%; background: linear-gradient(45deg, var(--accent-green) 0%, var(--light-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; flex-direction: column;">
+                            <i class="fas fa-glass-whiskey" style="font-size: 64px; margin-bottom: 15px;"></i>
+                            Traditional<br>
+                            Ethiopian Drinks
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo-circle" style="width: 50px; height: 50px;">
+                        <i class="fas fa-utensils" style="color: white; font-size: 18px;"></i>
+                    </div>
+                    <span style="font-size: 24px; font-weight: bold;">Sora <span class="amharic">ሶራ</span></span>
+                </div>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Order authentic Ethiopian traditional food online. Organic teff injera, vegan dishes, indigenous
+                    ingredients. Best Ethiopian menu in East York Toronto, Danforth area.
+                </p>
+                <div class="footer-social">
+                    <span style="margin-right: 15px; color: var(--light-green);">Follow Us:</span>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3><i class="fas fa-clock" style="margin-right: 8px;"></i>Delivery Hours</h3>
+                <p style="color: rgba(255,255,255,0.9);">Monday - Sunday</p>
+                <p style="color: var(--light-green); font-weight: 600;">10:00 AM - 11:00 PM</p>
+                <br>
+                <h3><i class="fas fa-utensils" style="margin-right: 8px;"></i>Order Options</h3>
+                <ul style="list-style: none; color: rgba(255,255,255,0.8);">
+                    <li>Online Ordering</li>
+                    <li>Phone Orders</li>
+                    <li>Pickup Available</li>
+                    <li>East York Delivery</li>
+                    <li>Catering Services</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Location & Delivery</h3>
+                <p style="color: rgba(255,255,255,0.9);">
+                    1585 Danforth Ave<br>
+                    East York, Toronto, ON M4J 1N2<br>
+                    Canada
+                </p>
+                <br>
+                <h3><i class="fas fa-phone" style="margin-right: 8px;"></i>Order Now</h3>
+                <p style="color: var(--light-green); font-weight: 600; font-size: 20px;">
+                    (647) 647-0000
+                </p>
+                <p style="color: rgba(255,255,255,0.8);">
+                    orders@soraethiopian.com
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Sora Ethiopian Restaurant Menu ሶራ - Organic Teff Injera & Vegan Ethiopian Food | East York
+                Toronto | Danforth Area</p>
+        </div>
+    </footer>
+
+    <script src="web.js"></script>
+</body>
+
+</html>
