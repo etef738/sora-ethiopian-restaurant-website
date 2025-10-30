@@ -1,0 +1,1307 @@
+below
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Sora Ethiopian Restaurant | Ethiopian Food Culture & Recipes</title>
+    <meta name="description"
+        content="Explore Ethiopian food culture, traditional recipes, coffee ceremony guides, and restaurant news from Sora Ethiopian Restaurant Toronto. Learn about teff, injera, and Ethiopian cuisine.">
+    <meta name="keywords"
+        content="Ethiopian food blog, Ethiopian recipes, teff injera recipe, Ethiopian coffee ceremony, Ethiopian culture Toronto, Danforth restaurant blog">
+    <link rel="stylesheet" href="web.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5e6d3;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header with Clean Diagonal Separation */
+        header {
+            background: #1a5c2e;
+            position: relative;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #f5e6d3;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            transition: all 0.3s;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #f5e6d3;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffd700;
+        }
+
+        nav {
+            background: rgba(26, 92, 46, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(245, 230, 211, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .diagonal-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #f5e6d3;
+            clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5e6d3 0%, #fff 100%);
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            color: #1a5c2e;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 16px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .breadcrumb a {
+            color: #1a5c2e;
+            text-decoration: none;
+        }
+
+        /* Blog Categories */
+        .blog-categories {
+            background: white;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .category-tag {
+            padding: 10px 20px;
+            background: #f5e6d3;
+            border: 2px solid #1a5c2e;
+            border-radius: 25px;
+            color: #1a5c2e;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .category-tag:hover {
+            background: #1a5c2e;
+            color: white;
+        }
+
+        /* Featured Post */
+        .featured-section {
+            padding: 60px 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: #1a5c2e;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4941e;
+        }
+
+        .featured-post {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .featured-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .post-category {
+            color: #d4941e;
+            font-weight: 600;
+        }
+
+        .featured-content h2 {
+            font-size: 32px;
+            color: #1a5c2e;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .featured-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .featured-preview {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .featured-full {
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        .featured-full h3 {
+            color: #1a5c2e;
+            margin: 20px 0 15px;
+            font-size: 24px;
+        }
+
+        .featured-full p {
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #1a5c2e;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .read-more:hover {
+            background: #0e3018;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 40px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 450px;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #d4941e 0%, #ffd700 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.5);
+            flex-shrink: 0;
+        }
+
+        .blog-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-content h3 {
+            font-size: 22px;
+            color: #1a5c2e;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            min-height: 56px;
+        }
+
+        .blog-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Read More/Less Button Styles */
+        .blog-text {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-text {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 72px;
+        }
+
+        .full-text {
+            color: #666;
+            line-height: 1.8;
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        .full-text p {
+            margin-bottom: 15px;
+        }
+
+        .full-text h4 {
+            color: #1a5c2e;
+            margin: 20px 0 10px;
+            font-size: 18px;
+        }
+
+        .read-more-btn,
+        .read-less-btn {
+            background: none;
+            border: 2px solid #1a5c2e;
+            color: #1a5c2e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .read-more-btn:hover,
+        .read-less-btn:hover {
+            background: #1a5c2e;
+            color: white;
+        }
+
+        .read-less-btn {
+            margin-top: 15px;
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: auto;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #1a5c2e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .author-name {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .read-time {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        .newsletter-button {
+            padding: 15px 35px;
+            background: #ffd700;
+            color: #1a5c2e;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-button:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Popular Posts Sidebar */
+        .popular-posts {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .popular-posts h3 {
+            font-size: 24px;
+            color: #1a5c2e;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .popular-post-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .popular-post-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .popular-post-number {
+            width: 40px;
+            height: 40px;
+            background: #d4941e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .popular-post-content h4 {
+            font-size: 16px;
+            color: #1a5c2e;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .popular-post-content p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a5c2e;
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #f5e6d3;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #f5e6d3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 200px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        /* Mobile Navigation Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #1a5c2e;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 300px;
+                background-color: #ffffff;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                color: #333;
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav ul li a:hover,
+            nav ul li a.active {
+                color: #1a5c2e;
+                background-color: transparent;
+            }
+
+            nav ul li:last-child a {
+                background-color: #1a5c2e;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 5px;
+                text-align: center;
+                border-bottom: none;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="top-bar">
+                <a href="index.html" class="logo">SORA</a>
+                <div class="social-icons">
+                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
+                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
+                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
+                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">🛒 Home</a></li>
+                    <li><a href="about.html">📘 About</a></li>
+                    <li><a href="menu.html">📺 Menu</a></li>
+                    <li><a href="sportbar.html">🏈 Sport Bar</a></li>
+                    <li><a href="livemusic.html">🎵 Live Music</a></li>
+                    <li><a href="catering.html">🍽️ Catering</a></li>
+                    <li><a href="blog.html" class="active">📝 Blog</a></li>
+                    <li><a href="contact.html">📞 Contact</a></li>
+                    <li><a href="#order-online" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="diagonal-separator"></div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Our Blog</h1>
+        <p>Discover Ethiopian cuisine, culture, and culinary traditions</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Blog
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <div class="blog-categories">
+        <div class="category-list">
+            <a href="#" class="category-tag">All Posts</a>
+            <a href="#" class="category-tag">Recipes</a>
+            <a href="#" class="category-tag">Ethiopian Culture</a>
+            <a href="#" class="category-tag">Coffee Ceremony</a>
+            <a href="#" class="category-tag">Restaurant News</a>
+            <a href="#" class="category-tag">Health & Nutrition</a>
+        </div>
+    </div>
+
+    <!-- Featured Post -->
+    <section class="featured-section">
+        <h2 class="section-title">Featured Post</h2>
+        <div class="featured-post">
+            <div class="featured-image">☕</div>
+            <div class="featured-content">
+                <div class="post-meta">
+                    <span class="post-category">Coffee Ceremony</span>
+                    <span>December 15, 2024</span>
+                </div>
+                <h2>The Art of Ethiopian Coffee Ceremony: A Sacred Tradition</h2>
+                <div class="featured-text">
+                    <p class="featured-preview">Discover the ancient ritual of Ethiopian coffee ceremony, known as
+                        'Buna.' Learn about the spiritual significance, the three rounds of coffee, and how this
+                        ceremony brings communities together...</p>
+                    <div class="featured-full" style="display: none;">
+                        <p>Discover the ancient ritual of Ethiopian coffee ceremony, known as 'Buna.' Learn about the
+                            spiritual significance, the three rounds of coffee, and how this ceremony brings communities
+                            together.</p>
+                        <p>The Ethiopian coffee ceremony is much more than just drinking coffee - it's a spiritual and
+                            social experience that has been practiced for centuries. Ethiopia, the birthplace of coffee,
+                            has developed this elaborate ritual that can take up to two hours to complete.</p>
+                        <h3>The Sacred Process</h3>
+                        <p>The ceremony begins with washing green coffee beans and roasting them over an open flame. The
+                            aroma of roasting beans is wafted towards guests - a gesture of friendship and respect. The
+                            beans are then ground by hand using a mortar and pestle, creating a rhythmic sound that adds
+                            to the ceremony's meditative quality.</p>
+                        <h3>Three Rounds of Blessing</h3>
+                        <p>Coffee is served in three rounds: Abol (the first round), Tona (second), and Baraka (third).
+                            Each round has spiritual significance, with the third round considered a blessing. The
+                            coffee gets progressively weaker, but the conversation and bonds grow stronger.</p>
+                        <p>At Sora, we perform the full traditional ceremony daily. Join us to experience this
+                            UNESCO-recognized cultural heritage that brings people together through the simple act of
+                            sharing coffee.</p>
+                    </div>
+                    <a href="#" class="read-more">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <h2 class="section-title">Recent Posts</h2>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image">🌾</div>
+                <div class="blog-content">
+                    <div class="post-meta">
+                        <span class="post-category">Health & Nutrition</span>
+                    </div>
+                    <h3>The Superfood Powers of Teff: Ethiopia's Ancient Grain</h3>
+                    <div class="blog-text">
+                        <p class="preview-text">Learn why teff, the main ingredient in injera, is considered a
+                            superfood. Rich in protein, fiber, and minerals, this gluten-free grain has sustained
+                            Ethiopian culture for millennia...</p>
+                        <div class="full-text" style="display: none;">
+                            <p>Learn why teff, the main ingredient in injera, is considered a superfood. Rich in
+                                protein, fiber, and minerals, this gluten-free grain has sustained Ethiopian culture for
+                                millennia.</p>
+                            <p>Teff is incredibly nutritious - it contains all eight essential amino acids, making it a
+                                complete protein source. It's also rich in calcium, with one cup of cooked teff
+                                containing as much calcium as a half cup of cooked spinach. The grain is naturally
+                                gluten-free, making it perfect for those with celiac disease or gluten sensitivity.</p>
+                            <p>At Sora, we use 100% organic teff flour for our injera, fermenting it traditionally for
+                                three days to enhance its nutritional value and create that distinctive tangy flavor.
+                                The fermentation process increases the bioavailability of nutrients and adds beneficial
+                                probiotics.</p>
+                            <p>Studies have shown that teff can help regulate blood sugar levels, improve digestive
+                                health, and support weight management. Its high fiber content keeps you feeling full
+                                longer, while its iron content helps prevent anemia - a common concern in plant-based
+                                diets.</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <div class="author-avatar">MS</div>
+                            <span class="author-name">Mama Sora</span>
+                        </div>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image">🍽️</div>
+                <div class="blog-content">
+                    <div class="post-meta">
+                        <span class="post-category">Recipes</span>
+                    </div>
+                    <h3>How to Make Authentic Kitfo at Home</h3>
+                    <div class="blog-text">
+                        <p class="preview-text">Master the art of preparing Ethiopia's beloved beef tartare. Our
+                            step-by-step guide includes selecting the right cut, preparing mitmita spice, and achieving
+                            the perfect texture...</p>
+                        <div class="full-text" style="display: none;">
+                            <p>Master the art of preparing Ethiopia's beloved beef tartare. Our step-by-step guide
+                                includes selecting the right cut, preparing mitmita spice, and achieving the perfect
+                                texture.</p>
+                            <h4>Ingredients You'll Need:</h4>
+                            <p>Start with 1 pound of very fresh, high-quality beef (eye of round or sirloin), finely
+                                minced. You'll also need mitmita (Ethiopian chili powder), korerima (Ethiopian
+                                cardamom), and clarified butter (niter kibbeh). The quality of your beef is crucial -
+                                visit a trusted butcher and tell them you're making tartare.</p>
+                            <h4>Step-by-Step Preparation:</h4>
+                            <p>1. Hand-mince the beef with a sharp knife until very fine - avoid using a grinder as it
+                                can affect the texture. 2. Warm the clarified butter gently - it should be warm but not
+                                hot. 3. Mix the mitmita into the beef gradually, tasting as you go. 4. Add the warm
+                                butter and mix quickly to slightly cook the outer layer of meat while keeping the center
+                                raw.</p>
+                            <p>Serve immediately with fresh injera, ayib (cottage cheese), and gomen (collard greens).
+                                For those who prefer it less raw, you can cook it lightly in a pan - this version is
+                                called "kitfo leb leb."</p>
+                            <p>Pro tip from Chef Tadesse: The secret to great kitfo is in the balance - not too much
+                                butter, not too much spice, and absolutely fresh meat. Come to Sora to taste our
+                                award-winning version!</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <div class="author-avatar">CT</div>
+                            <span class="author-name">Chef Tadesse</span>
+                        </div>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image">🎵</div>
+                <div class="blog-content">
+                    <div class="post-meta">
+                        <span class="post-category">Ethiopian Culture</span>
+                    </div>
+                    <h3>Live Ethiopian Music: The Soul of Our Restaurant</h3>
+                    <div class="blog-text">
+                        <p class="preview-text">Experience the vibrant sounds of traditional Ethiopian music every
+                            Friday night. Learn about the krar, masenqo, and the rich musical heritage that fills our
+                            restaurant...</p>
+                        <div class="full-text" style="display: none;">
+                            <p>Experience the vibrant sounds of traditional Ethiopian music every Friday night. Learn
+                                about the krar, masenqo, and the rich musical heritage that fills our restaurant.</p>
+                            <p>Ethiopian music is deeply rooted in the country's diverse cultural traditions. The
+                                pentatonic scale creates the distinctive sound that immediately transports you to the
+                                highlands of Ethiopia. At Sora, we feature live performances that showcase both
+                                traditional and contemporary Ethiopian music.</p>
+                            <p>The krar, a six-stringed lyre, produces haunting melodies that have accompanied Ethiopian
+                                storytelling for centuries. The masenqo, a single-stringed fiddle, adds a unique voice
+                                to our musical nights. Our performers also feature the kebero drum, whose rhythms are
+                                essential to Ethiopian Orthodox church music and traditional celebrations.</p>
+                            <p>Every Friday from 8 PM, our restaurant transforms into a cultural hub where the Ethiopian
+                                community and music lovers gather. The performances often include traditional Eskista
+                                dance - a unique Ethiopian dance characterized by shoulder movements that requires
+                                incredible skill and practice.</p>
+                            <p>Join us for an unforgettable evening where authentic cuisine meets soul-stirring music.
+                                Reservations recommended for Friday nights!</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <div class="author-avatar">AB</div>
+                            <span class="author-name">Abebe</span>
+                        </div>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image">🌿</div>
+                <div class="blog-content">
+                    <div class="post-meta">
+                        <span class="post-category">Recipes</span>
+                    </div>
+                    <h3>Vegan Ethiopian Feast: Perfect for Fasting Days</h3>
+                    <div class="blog-text">
+                        <p class="preview-text">Explore the rich tradition of Ethiopian vegan cuisine. From misir wat to
+                            shiro, discover how Ethiopian Orthodox fasting traditions created some of the world's best
+                            plant-based dishes...</p>
+                        <div class="full-text" style="display: none;">
+                            <p>Explore the rich tradition of Ethiopian vegan cuisine. From misir wat to shiro, discover
+                                how Ethiopian Orthodox fasting traditions created some of the world's best plant-based
+                                dishes.</p>
+                            <p>Ethiopian Orthodox Christians observe over 200 fasting days per year, during which they
+                                abstain from all animal products. This religious practice has given rise to an
+                                incredibly diverse and flavorful vegan cuisine that rivals any in the world.</p>
+                            <h4>Essential Vegan Dishes:</h4>
+                            <p>Misir Wat (red lentil stew) - Protein-rich lentils simmered in berbere sauce create a
+                                hearty, satisfying dish. Shiro Wat - Ground chickpea flour cooked into a creamy,
+                                comforting stew. Gomen - Collard greens sautéed with garlic and ginger. Tikil Gomen -
+                                Cabbage and carrots with turmeric. Kik Alicha - Yellow split peas in a mild sauce.</p>
+                            <p>The key to Ethiopian vegan cooking is the spice blends. Berbere adds complex heat and
+                                depth, while milder spice combinations create beautiful yellow dishes. The use of injera
+                                as both plate and utensil makes every meal interactive and communal.</p>
+                            <p>At Sora, our vegan platter (Beyainetu) offers a rainbow of these dishes, providing
+                                complete proteins, abundant vegetables, and incredible flavors. It's not just for
+                                fasting days - many of our non-vegan customers order it for its incredible taste and
+                                health benefits!</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <div class="author-avatar">MK</div>
+                            <span class="author-name">Marta K.</span>
+                        </div>
+                        <span class="read-time">7 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image">🏆</div>
+                <div class="blog-content">
+                    <div class="post-meta">
+                        <span class="post-category">Restaurant News</span>
+                    </div>
+                    <h3>Sora Wins Best Ethiopian Restaurant Award 2024</h3>
+                    <div class="blog-text">
+                        <p class="preview-text">We're honored to announce that Sora has been voted Toronto's Best
+                            Ethiopian Restaurant for 2024. Thank you to our loyal customers and the Danforth community
+                            for 25 years of support...</p>
+                        <div class="full-text" style="display: none;">
+                            <p>We're honored to announce that Sora has been voted Toronto's Best Ethiopian Restaurant
+                                for 2024. Thank you to our loyal customers and the Danforth community for 25 years of
+                                support.</p>
+                            <p>This recognition from Toronto Life magazine reflects our unwavering commitment to
+                                authenticity, quality, and hospitality. Since Mama Sora opened our doors in 1999, we've
+                                stayed true to traditional recipes while embracing our role in Toronto's diverse
+                                culinary landscape.</p>
+                            <p>The judges particularly praised our use of 100% organic teff for injera, our traditional
+                                coffee ceremony, and our ability to create an authentic Ethiopian dining experience.
+                                They also highlighted our sport bar and live music nights as unique additions that bring
+                                community together.</p>
+                            <p>To celebrate, we're offering 25% off our family platters throughout January 2025. We're
+                                also planning special events including cooking classes, expanded live music nights, and
+                                a documentary screening about Ethiopian cuisine.</p>
+                            <p>Thank you to every customer who has walked through our doors, every family who has
+                                celebrated with us, and every person who has made Sora part of their Toronto story. This
+                                award belongs to all of you!</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <div class="author-avatar">SR</div>
+                            <span class="author-name">Sora Team</span>
+                        </div>
+                        <span class="read-time">3 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image">🌶️</div>
+                <div class="blog-content">
+                    <div class="post-meta">
+                        <span class="post-category">Health & Nutrition</span>
+                    </div>
+                    <h3>The Health Benefits of Berbere Spice</h3>
+                    <div class="blog-text">
+                        <p class="preview-text">Discover the powerful health benefits of berbere, Ethiopia's signature
+                            spice blend. From anti-inflammatory properties to digestive health, learn why this spice mix
+                            is more than just flavor...</p>
+                        <div class="full-text" style="display: none;">
+                            <p>Discover the powerful health benefits of berbere, Ethiopia's signature spice blend. From
+                                anti-inflammatory properties to digestive health, learn why this spice mix is more than
+                                just flavor.</p>
+                            <p>Berbere typically contains over 20 different spices, each contributing unique health
+                                benefits. The blend includes chili peppers, garlic, ginger, basil, korarima, rue,
+                                ajwain, nigella, and fenugreek, among others. This complex mixture creates not just
+                                incredible flavor but also a powerhouse of nutrition.</p>
+                            <h4>Key Health Benefits:</h4>
+                            <p>Anti-inflammatory: The combination of turmeric, ginger, and cinnamon provides powerful
+                                anti-inflammatory effects. Metabolism boost: Chili peppers contain capsaicin, which can
+                                increase metabolic rate. Digestive health: Ajwain and ginger aid digestion and reduce
+                                bloating. Heart health: Fenugreek may help lower cholesterol levels. Antioxidants: Many
+                                spices in berbere are rich in antioxidants that fight free radicals.</p>
+                            <p>Studies have shown that regular consumption of these spices may help regulate blood
+                                sugar, improve circulation, and even have anti-cancer properties. The traditional
+                                Ethiopian diet, rich in berbere-spiced dishes, is associated with lower rates of heart
+                                disease.</p>
+                            <p>At Sora, we prepare our berbere blend in-house, roasting and grinding the spices fresh to
+                                maximize both flavor and health benefits. Try it in our doro wat or kitfo to experience
+                                this miraculous spice blend!</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <div class="author-avatar">TG</div>
+                            <span class="author-name">Dr. T. Girma</span>
+                        </div>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Popular Posts Sidebar -->
+    <section class="blog-section">
+        <div class="popular-posts">
+            <h3>Most Popular</h3>
+
+            <div class="popular-post-item">
+                <div class="popular-post-number">1</div>
+                <div class="popular-post-content">
+                    <h4>Complete Guide to Ethiopian Coffee Ceremony</h4>
+                    <p>December 15, 2024</p>
+                </div>
+            </div>
+
+            <div class="popular-post-item">
+                <div class="popular-post-number">2</div>
+                <div class="popular-post-content">
+                    <h4>How to Eat Ethiopian Food: A Beginner's Guide</h4>
+                    <p>November 28, 2024</p>
+                </div>
+            </div>
+
+            <div class="popular-post-item">
+                <div class="popular-post-number">3</div>
+                <div class="popular-post-content">
+                    <h4>The Story Behind Injera: Ethiopia's Staple Bread</h4>
+                    <p>November 10, 2024</p>
+                </div>
+            </div>
+
+            <div class="popular-post-item">
+                <div class="popular-post-number">4</div>
+                <div class="popular-post-content">
+                    <h4>Ethiopian Wedding Traditions and Feast</h4>
+                    <p>October 22, 2024</p>
+                </div>
+            </div>
+
+            <div class="popular-post-item">
+                <div class="popular-post-number">5</div>
+                <div class="popular-post-content">
+                    <h4>Sport Bar: Watch Premier League at Sora</h4>
+                    <p>October 5, 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get Ethiopian recipes, cultural insights, and restaurant updates delivered to your inbox</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Latest from Blog</h4>
+                <p>Stay updated with Ethiopian food culture, traditional recipes, restaurant news, and upcoming events
+                    at Sora Ethiopian Restaurant.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <p>1234 Danforth Avenue<br>
+                    East York, Toronto<br>
+                    Phone: (416) 555-1234<br>
+                    Email: info@soraethiopian.ca</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Blog post read more/less functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle regular blog cards
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            blogCards.forEach(card => {
+                const readMoreBtn = card.querySelector('.read-more-btn');
+                const previewText = card.querySelector('.preview-text');
+                const fullText = card.querySelector('.full-text');
+
+                if (readMoreBtn && fullText) {
+                    readMoreBtn.addEventListener('click', function () {
+                        if (fullText.style.display === 'none' || fullText.style.display === '') {
+                            // Expand
+                            previewText.style.display = 'none';
+                            fullText.style.display = 'block';
+                            readMoreBtn.textContent = 'Read Less';
+
+                            // Smooth scroll to keep card in view
+                            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            // Collapse
+                            previewText.style.display = '-webkit-box';
+                            fullText.style.display = 'none';
+                            readMoreBtn.textContent = 'Read More';
+                        }
+                    });
+                }
+            });
+
+            // Handle featured post
+            const featuredReadMore = document.querySelector('.featured-content .read-more');
+            const featuredPreview = document.querySelector('.featured-preview');
+            const featuredFull = document.querySelector('.featured-full');
+
+            if (featuredReadMore && featuredFull) {
+                featuredReadMore.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    if (featuredFull.style.display === 'none' || featuredFull.style.display === '') {
+                        // Expand
+                        featuredPreview.style.display = 'none';
+                        featuredFull.style.display = 'block';
+                        featuredReadMore.textContent = 'Read Less';
+                    } else {
+                        // Collapse
+                        featuredPreview.style.display = 'block';
+                        featuredFull.style.display = 'none';
+                        featuredReadMore.textContent = 'Read Full Article';
+                    }
+                });
+            }
+        });
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav ul');
+                const hamburger = document.querySelector('.hamburger');
+                const overlay = document.querySelector('.mobile-overlay');
+                const body = document.body;
+
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="toggleMenu()"></div>
+
+    <!-- JavaScript for Modern Animations -->
+    <script src="script/sora-animations.js"></script>
+</body>
+
+</html>

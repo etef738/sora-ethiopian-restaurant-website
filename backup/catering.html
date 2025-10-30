@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopian Catering Services | Sora Restaurant | Wedding & Corporate Catering Toronto</title>
+    <meta name="description"
+        content="Ethiopian catering services in Toronto. Wedding catering, corporate events, private parties. Traditional coffee ceremony, authentic Ethiopian food catering Danforth East York.">
+    <meta name="keywords"
+        content="Ethiopian catering Toronto, wedding catering services, corporate catering Toronto, Ethiopian wedding food, coffee ceremony catering, Danforth catering, party catering Toronto">
+    <link rel="stylesheet" href="web.css">
+    <style>
+        /* Mobile Navigation Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #1a5c2e;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 300px;
+                background-color: #ffffff;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            .nav-list.active {
+                right: 0;
+            }
+
+            .nav-list li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+
+            .nav-list li a {
+                font-size: 18px;
+                color: #333;
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-list li a:hover,
+            .nav-list li a.active {
+                color: #1a5c2e;
+                background-color: transparent;
+            }
+
+            .order-btn {
+                background-color: #1a5c2e !important;
+                color: white !important;
+                padding: 12px 20px !important;
+                border-radius: 5px !important;
+                text-align: center !important;
+                border-bottom: none !important;
+                margin-top: 20px !important;
+                display: block !important;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+
+        /* Desktop Navigation Styles */
+        .main-nav {
+            background: rgba(26, 92, 46, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list li a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-list li a:hover,
+        .nav-list li a.active {
+            background: rgba(245, 230, 211, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="header-content">
+            <a href="index.html" class="logo">SORA</a>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">🛒 Home</a></li>
+                    <li><a href="about.html">📘 About</a></li>
+                    <li><a href="menu.html">📺 Menu</a></li>
+                    <li><a href="sportbar.html">🏈 Sport Bar</a></li>
+                    <li><a href="livemusic.html">🎵 Live Music</a></li>
+                    <li><a href="catering.html" class="active">🍽️ Catering</a></li>
+                    <li><a href="blog.html">📝 Blog</a></li>
+                    <li><a href="contact.html">📞 Contact</a></li>
+                </ul>
+                <a href="#order" class="order-btn">📷 Order Online</a>
+            </nav>
+        </div>
+        <div class="diagonal-separator"></div>
+    </header>
+
+    <!-- Catering Hero Section -->
+    <section class="catering-hero">
+        <h1>🍽️ Sora Catering Services 🍽️</h1>
+        <p>Bring the authentic taste of Ethiopia to your special events. From intimate gatherings to grand celebrations,
+            we make every occasion memorable.</p>
+        <div class="hero-buttons">
+            <a href="#packages" class="btn btn-primary">View Packages</a>
+            <a href="tel:+14165555678" class="btn btn-secondary">Call for Quote</a>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-section">
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-number">500+</div>
+                <div class="trust-label">Events Catered</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-number">25</div>
+                <div class="trust-label">Years Experience</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-number">10-1000</div>
+                <div class="trust-label">Guest Capacity</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-number">5★</div>
+                <div class="trust-label">Average Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2 class="section-title">Our Catering Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">💑</div>
+                    <h3>Wedding Catering</h3>
+                </div>
+                <div class="service-content">
+                    <p>Make your wedding unforgettable with authentic Ethiopian cuisine. We provide full-service
+                        catering for traditional and modern weddings.</p>
+                    <ul class="service-features">
+                        <li>Traditional Ethiopian wedding feast</li>
+                        <li>Coffee ceremony service</li>
+                        <li>Custom menu planning</li>
+                        <li>Professional serving staff</li>
+                        <li>Setup and cleanup included</li>
+                        <li>50-500+ guests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">💼</div>
+                    <h3>Corporate Events</h3>
+                </div>
+                <div class="service-content">
+                    <p>Impress clients and colleagues with unique Ethiopian flavors. Perfect for business lunches,
+                        conferences, and company celebrations.</p>
+                    <ul class="service-features">
+                        <li>Buffet or plated service</li>
+                        <li>Dietary accommodations</li>
+                        <li>Professional presentation</li>
+                        <li>On-time delivery guaranteed</li>
+                        <li>Disposable or rental options</li>
+                        <li>10-200+ attendees</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🎉</div>
+                    <h3>Private Parties</h3>
+                </div>
+                <div class="service-content">
+                    <p>Celebrate birthdays, anniversaries, and special occasions with our authentic Ethiopian catering
+                        tailored to your needs.</p>
+                    <ul class="service-features">
+                        <li>Customizable menu options</li>
+                        <li>Family-style serving</li>
+                        <li>Kids menu available</li>
+                        <li>Delivery or pickup</li>
+                        <li>Party platters</li>
+                        <li>10-100+ guests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">☕</div>
+                    <h3>Coffee Ceremony</h3>
+                </div>
+                <div class="service-content">
+                    <p>Add authentic Ethiopian coffee ceremony to any event. A cultural experience that brings people
+                        together.</p>
+                    <ul class="service-features">
+                        <li>Traditional roasting ceremony</li>
+                        <li>Ceremonial equipment provided</li>
+                        <li>Trained ceremony master</li>
+                        <li>45-60 minute experience</li>
+                        <li>Includes popcorn & incense</li>
+                        <li>Up to 30 participants</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🎭</div>
+                    <h3>Cultural Events</h3>
+                </div>
+                <div class="service-content">
+                    <p>Authentic catering for Ethiopian holidays, religious celebrations, and cultural festivals.</p>
+                    <ul class="service-features">
+                        <li>Traditional holiday menus</li>
+                        <li>Fasting food options</li>
+                        <li>Religious observances respected</li>
+                        <li>Cultural authenticity guaranteed</li>
+                        <li>Community event discounts</li>
+                        <li>Any size gathering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">🚚</div>
+                    <h3>Drop-Off Catering</h3>
+                </div>
+                <div class="service-content">
+                    <p>Simple, convenient catering solution for casual events. We deliver, you serve and enjoy!</p>
+                    <ul class="service-features">
+                        <li>Hot food delivery</li>
+                        <li>Disposable serving ware</li>
+                        <li>Setup instructions provided</li>
+                        <li>Minimum order 10 people</li>
+                        <li>48 hours notice required</li>
+                        <li>Toronto & GTA delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Packages Section -->
+    <section class="packages-section" id="packages">
+        <h2 class="section-title">Catering Packages</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3 class="package-name">Essential</h3>
+                <div class="package-price">$25</div>
+                <div class="package-serving">per person</div>
+                <ul class="package-includes">
+                    <li>Choice of 2 meat dishes</li>
+                    <li>3 vegetarian dishes</li>
+                    <li>Fresh injera bread</li>
+                    <li>Ethiopian salad</li>
+                    <li>Basic setup</li>
+                    <li>Disposable plates & utensils</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Select Package</a>
+            </div>
+
+            <div class="package-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <h3 class="package-name">Premium</h3>
+                <div class="package-price">$35</div>
+                <div class="package-serving">per person</div>
+                <ul class="package-includes">
+                    <li>Choice of 3 meat dishes</li>
+                    <li>4 vegetarian dishes</li>
+                    <li>Fresh injera & rice</li>
+                    <li>Appetizer platter</li>
+                    <li>Ethiopian salad & sides</li>
+                    <li>Coffee ceremony (30+ guests)</li>
+                    <li>Professional setup & service</li>
+                    <li>Quality dinnerware</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Select Package</a>
+            </div>
+
+            <div class="package-card">
+                <h3 class="package-name">Deluxe</h3>
+                <div class="package-price">$45</div>
+                <div class="package-serving">per person</div>
+                <ul class="package-includes">
+                    <li>Full menu selection</li>
+                    <li>Premium meat dishes</li>
+                    <li>Complete vegetarian spread</li>
+                    <li>Appetizers & desserts</li>
+                    <li>Coffee ceremony included</li>
+                    <li>Full service staff</li>
+                    <li>Premium setup & décor</li>
+                    <li>China & glassware</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Select Package</a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 30px; color: #666;">
+            * Minimum order 10 people. Custom packages available for large events.
+        </p>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Consultation</h3>
+                <p>Discuss your event details, guest count, and preferences with our catering team</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Menu Planning</h3>
+                <p>Select from our packages or create a custom menu that fits your needs and budget</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Tasting Session</h3>
+                <p>Optional tasting available for events of 50+ guests to ensure satisfaction</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Confirmation</h3>
+                <p>Finalize details, sign agreement, and secure your date with a deposit</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h3>Delivery & Setup</h3>
+                <p>Our team arrives on time, sets up everything, and ensures perfect presentation</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">6</div>
+                <h3>Enjoy!</h3>
+                <p>Relax and enjoy your event while we handle the food service and cleanup</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">Catering Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">
+                💑
+                <div class="gallery-caption">Wedding Reception for 200</div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                🍽️
+                <div class="gallery-caption">Corporate Lunch Buffet</div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                ☕
+                <div class="gallery-caption">Traditional Coffee Ceremony</div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                🎉
+                <div class="gallery-caption">Birthday Celebration</div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                🥘
+                <div class="gallery-caption">Buffet Setup</div>
+            </div>
+            <div class="gallery-item" style="background: linear-gradient(135deg, #30cfd0, #330867);">
+                🎊
+                <div class="gallery-caption">Cultural Festival</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="header-content">
+            <a href="index.html" class="logo">SORA</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="sportbar.html">Sport Bar</a></li>
+                    <li><a href="livemusic.html">Live Music</a></li>
+                    <li><a href="catering.html" class="active">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="#order" class="order-btn">Order Online</a>
+            </nav>
+        </div>
+        <div class="diagonal-separator"></div>
+    </header>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="header-content">
+            <a href="index.html" class="logo">SORA</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="sportbar.html">Sport Bar</a></li>
+                    <li><a href="livemusic.html">Live Music</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="#order" class="order-btn">Order Online</a>
+            </nav>
+        </div>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary" style="font-size: 20px; padding: 18px 40px;">Get Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sora Catering</h4>
+                <p>Authentic Ethiopian catering services for weddings, corporate events, and private parties in Toronto
+                    and GTA. 25+ years of excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Catering Services</h4>
+                <ul>
+                    <li>Wedding Catering</li>
+                    <li>Corporate Events</li>
+                    <li>Private Parties</li>
+                    <li>Coffee Ceremony</li>
+                    <li>Drop-off Service</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Catering</h4>
+                <p>Phone: (416) 555-5678<br>
+                    Email: catering@soraethiopian.ca<br>
+                    <br>
+                    48 hours notice required<br>
+                    Minimum order: 10 people
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="toggleMenu()"></div>
+
+    <!-- JavaScript for Mobile Navigation -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-list');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-list li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('.nav-list');
+                const hamburger = document.querySelector('.hamburger');
+                const overlay = document.querySelector('.mobile-overlay');
+                const body = document.body;
+
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
