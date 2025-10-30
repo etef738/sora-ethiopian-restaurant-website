@@ -289,6 +289,12 @@ header {
     letter-spacing: 2px;
 }
 
+.nav-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .social-icons {
     display: flex;
     gap: 20px;
@@ -1455,7 +1461,24 @@ footer {
        RESPONSIVE HAMBURGER NAVIGATION
     ================================ */
     .hamburger {
+        display: flex !important;
+        order: 3;
+    }
+
+    .top-bar {
+        position: relative;
+        z-index: 1002;
+    }
+
+    .nav-controls {
         display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-icons {
+        display: none;
+        /* Hide social icons on mobile for cleaner layout */
     }
 
     nav {
