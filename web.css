@@ -1456,7 +1456,7 @@ footer {
 /*================================
     8. MEDIA QUERIES (REFINEMENTS)
 ================================*/
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     /* ================================
        RESPONSIVE HAMBURGER NAVIGATION
@@ -1495,10 +1495,10 @@ footer {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
+        width: 220px;
         height: 100vh;
         background: rgba(26, 92, 46, 0.98);
-        padding: 80px 30px 30px;
+        padding: 70px 20px 20px;
         border-radius: 0;
         backdrop-filter: blur(20px);
         z-index: 1000;
@@ -2048,5 +2048,29 @@ p,
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+/* ================================
+   SMALLER PHONE OPTIMIZATION
+================================ */
+@media (max-width: 480px) {
+    nav {
+        width: 180px !important;
+        padding: 60px 15px 15px !important;
+    }
+
+    nav a {
+        padding: 12px 15px !important;
+        font-size: 15px !important;
+    }
+
+    .hamburger {
+        padding: 8px !important;
+    }
+
+    .hamburger span {
+        width: 22px !important;
+        height: 2px !important;
     }
 }

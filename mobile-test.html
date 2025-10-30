@@ -76,9 +76,10 @@
         <h2>🧪 Mobile Hamburger Menu Test</h2>
         <p><strong>How to Test:</strong></p>
         <ol>
-            <li>Resize your browser window to mobile size (width < 768px)</li>
+            <li>Resize your browser window to mobile/tablet size (width ≤ 900px)</li>
             <li>The hamburger menu (☰) should be visible in the top-right</li>
             <li>Click the hamburger menu to open the slide-in navigation</li>
+            <li>Notice the compact menu size that doesn't cover half the page</li>
             <li>Click outside the menu or press ESC to close</li>
         </ol>
 
@@ -109,7 +110,7 @@
                 <p><strong>Hamburger Classes:</strong> ${hamburger ? hamburger.className : 'Not found'}</p>
                 <p><strong>Overlay Classes:</strong> ${overlay ? overlay.className : 'Not found'}</p>
                 <p><strong>Screen Width:</strong> ${window.innerWidth}px</p>
-                <p><strong>Expected Mobile:</strong> ${window.innerWidth <= 768 ? 'Yes' : 'No'}</p>
+                <p><strong>Expected Mobile:</strong> ${window.innerWidth <= 900 ? 'Yes' : 'No'}</p>
             `;
         }
 

@@ -813,7 +813,7 @@ function closeMenuOnNavClick() {
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth <= 768 && menuOpen) {
+            if (window.innerWidth <= 900 && menuOpen) {
                 toggleMenu();
             }
         });
@@ -826,7 +826,7 @@ function handleResize() {
     const nav = document.querySelector('#nav-menu') || document.querySelector('nav');
     const overlay = document.querySelector('.menu-overlay');
 
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 900) {
         // Desktop mode - reset menu state
         if (nav) {
             nav.classList.remove('menu-open');
