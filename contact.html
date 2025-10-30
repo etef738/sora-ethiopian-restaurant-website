@@ -247,10 +247,13 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            background:
+                linear-gradient(rgba(26, 92, 46, 0.7), rgba(26, 92, 46, 0.7)),
+                url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
             padding: 20px;
+            position: relative;
         }
 
         .map-placeholder h3 {
@@ -263,6 +266,40 @@
             margin-bottom: 10px;
         }
 
+        .location-info-box {
+            background: rgba(26, 92, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: fadeInScale 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-info-box:hover {
+            background: rgba(26, 92, 46, 0.98);
+            border-color: rgba(255, 215, 0, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .location-info-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffd700;
+        }
+
+        .location-info-box p {
+            font-size: 16px;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.4;
+        }
+
         .directions-btn {
             display: inline-block;
             margin-top: 20px;
@@ -273,11 +310,15 @@
             border-radius: 25px;
             font-weight: 600;
             transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .directions-btn:hover {
             background: white;
             transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
         }
 
         /* Contact Form */
@@ -603,6 +644,34 @@
             color: #ffd700;
         }
 
+        /* Location box animations */
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .location-info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.8s;
+        }
+
+        .location-info-box:hover::before {
+            left: 100%;
+        }
+
         @media (max-width: 768px) {
             .map-form-grid {
                 grid-template-columns: 1fr;
@@ -610,6 +679,24 @@
 
             .form-row {
                 grid-template-columns: 1fr;
+            }
+
+            .location-info-box {
+                padding: 25px;
+                margin: 10px;
+            }
+
+            .location-info-box h3 {
+                font-size: 24px;
+            }
+
+            .location-info-box p {
+                font-size: 14px;
+            }
+
+            .directions-btn {
+                padding: 10px 25px;
+                font-size: 14px;
             }
         }
 
@@ -813,12 +900,15 @@
         <div class="map-form-grid">
             <div class="map-container" id="map">
                 <div class="map-placeholder">
-                    <h3>📍 Find Us Here</h3>
-                    <p>1234 Danforth Avenue</p>
-                    <p>East York, Toronto, ON M4J 1N2</p>
-                    <p style="margin-top: 20px;">Near Donlands Station</p>
-                    <p>Free Street Parking Available</p>
-                    <a href="https://maps.google.com" target="_blank" class="directions-btn">Get Directions</a>
+                    <div class="location-info-box">
+                        <h3>📍 Find Us Here</h3>
+                        <p>1234 Danforth Avenue</p>
+                        <p>East York, Toronto, ON M4J 1N2</p>
+                        <p style="margin-top: 15px; font-weight: 600;">Near Donlands Station</p>
+                        <p style="color: #ffd700; font-weight: 600;">Free Street Parking Available</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=1234+Danforth+Avenue,+East+York,+Toronto,+ON+M4J+1N2"
+                            target="_blank" class="directions-btn">Get Directions</a>
+                    </div>
                 </div>
             </div>
 
