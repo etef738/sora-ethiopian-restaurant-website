@@ -58,6 +58,12 @@
             font-family: 'Playfair Display', serif;
         }
 
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .social-icons {
             display: flex;
             gap: 20px;
@@ -108,16 +114,22 @@
 
         /* Hamburger Menu Styles */
         .hamburger {
-            display: none;
+            display: flex;
             flex-direction: column;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 24px;
+            padding: 8px;
+            width: 40px;
+            height: 32px;
             position: relative;
             z-index: 1002;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background: rgba(245, 230, 211, 0.1);
         }
 
         .hamburger span {
@@ -566,6 +578,18 @@
             }
         }
 
+        /* Tablet Navigation */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 20px;
+            }
+            
+            nav a {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .sport-hero h1 {
@@ -579,6 +603,10 @@
 
             .btn {
                 width: 250px;
+            }
+
+            .social-icons {
+                display: none;
             }
 
             /* Mobile Navigation */
@@ -649,6 +677,27 @@
                 opacity: 1;
             }
         }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 28px;
+            }
+            
+            .hamburger {
+                width: 35px;
+                height: 28px;
+            }
+            
+            nav {
+                width: 100%;
+                right: -100%;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+        }
     </style>
 </head>
 
@@ -659,8 +708,15 @@
     <!-- Header Section -->
     <header>
         <div class="header-content">
-            <div class="top-bar">
-                <a href="index.html" class="logo">SORA</a>
+        <div class="top-bar">
+            <a href="index.html" class="logo">SORA</a>
+            <div class="nav-controls">
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="social-icons">
                     <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
                     <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
@@ -668,14 +724,7 @@
                     <a href="tel:+14165551234" aria-label="Call us">☎️</a>
                 </div>
             </div>
-            <!-- Hamburger Menu Button -->
-            <button class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav id="nav-menu">
+        </div>            <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html">🛒 Home</a></li>
                     <li><a href="about.html">📘 About</a></li>
