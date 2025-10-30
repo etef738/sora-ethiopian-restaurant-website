@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Sora Ethiopian Restaurant | Teff Injera, Kitfo, Vegan Options Toronto</title>
+    <meta name="description"
+        content="Explore Sora's authentic Ethiopian menu featuring teff injera, kitfo, doro wat, vegetarian beyainetu, vegan fasting options, and traditional coffee ceremony. Halal and gluten-free available.">
+    <meta name="keywords"
+        content="Ethiopian restaurant menu Toronto, teff injera, kitfo, doro wat, beyainetu, Ethiopian vegetarian food, vegan Ethiopian, halal Ethiopian food, Ethiopian coffee ceremony">
+    <link rel="stylesheet" href="web.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #f5e6d3 0%, #fff8e1 50%, #f5e6d3 100%);
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header with Clean Diagonal Separation */
+        header {
+            background: #1a5c2e;
+            position: relative;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #f5e6d3;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #f5e6d3;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffd700;
+        }
+
+        nav {
+            background: rgba(26, 92, 46, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(245, 230, 211, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .diagonal-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #f5e6d3;
+            clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5e6d3 0%, #fff 100%);
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            color: #1a5c2e;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .breadcrumb {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #1a5c2e;
+            text-decoration: none;
+        }
+
+        /* Menu Categories */
+        .menu-categories {
+            background: white;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .category-tab {
+            padding: 12px 25px;
+            background: #f5e6d3;
+            border: 2px solid #1a5c2e;
+            border-radius: 25px;
+            color: #1a5c2e;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: #1a5c2e;
+            color: white;
+        }
+
+        /* Menu Sections */
+        .menu-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: #1a5c2e;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4941e;
+        }
+
+        .section-description {
+            color: #666;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /* Menu Items Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(26, 92, 46, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 92, 46, 0.1) 0%, rgba(212, 148, 30, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(26, 92, 46, 0.2);
+        }
+
+        .menu-item:hover::before {
+            opacity: 1;
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item:hover .menu-item-image {
+            transform: scale(1.1);
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        .menu-item-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+            background: linear-gradient(135deg, #1a5c2e, #2d7542);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 3;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #d4941e, #ffd700);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            z-index: 4;
+            box-shadow: 0 4px 15px rgba(212, 148, 30, 0.4);
+        }
+
+        .menu-item-header {
+            padding: 25px;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item-name {
+            font-size: 24px;
+            color: #1a5c2e;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .tag.spicy {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .tag.vegan {
+            background: #51cf66;
+            color: white;
+        }
+
+        .tag.vegetarian {
+            background: #94d82d;
+            color: white;
+        }
+
+        .tag.halal {
+            background: #339af0;
+            color: white;
+        }
+
+        .tag.gluten-free {
+            background: #ffd43b;
+            color: #333;
+        }
+
+        .menu-item-body {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .menu-item-price {
+            font-size: 28px;
+            color: #d4941e;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fallback image placeholder */
+        .menu-item-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 50%, #d4941e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Combo Meals Section */
+        .combo-section {
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            color: white;
+            padding: 60px 20px;
+            margin-top: 40px;
+            border-radius: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .combo-section .section-title {
+            color: white;
+        }
+
+        .combo-section .section-title::after {
+            background: #ffd700;
+        }
+
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .combo-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .combo-card h3 {
+            font-size: 24px;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .combo-card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .combo-price {
+            font-size: 32px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .combo-serves {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Beverages Section */
+        .beverages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .beverage-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .beverage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .beverage-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .beverage-name {
+            font-size: 18px;
+            color: #1a5c2e;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .beverage-price {
+            color: #d4941e;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Coffee Ceremony Section */
+        .ceremony-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .ceremony-section h2 {
+            font-size: 36px;
+            color: #1a5c2e;
+            margin-bottom: 30px;
+        }
+
+        .ceremony-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .ceremony-step {
+            padding: 20px;
+        }
+
+        .ceremony-step-number {
+            width: 50px;
+            height: 50px;
+            background: #d4941e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ceremony-step h4 {
+            color: #1a5c2e;
+            margin-bottom: 10px;
+        }
+
+        .ceremony-step p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a5c2e;
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #f5e6d3;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #f5e6d3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        /* Mobile Navigation Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #1a5c2e;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 300px;
+                background-color: #ffffff;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                color: #333;
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav ul li a:hover,
+            nav ul li a.active {
+                color: #1a5c2e;
+                background-color: transparent;
+            }
+
+            nav ul li:last-child a {
+                background-color: #1a5c2e;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 5px;
+                text-align: center;
+                border-bottom: none;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="top-bar">
+                <a href="index.html" class="logo">SORA</a>
+                <div class="social-icons">
+                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
+                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
+                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
+                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">🛒 Home</a></li>
+                    <li><a href="about.html">📘 About</a></li>
+                    <li><a href="menu.html" class="active">📺 Menu</a></li>
+                    <li><a href="sportbar.html">🏈 Sport Bar</a></li>
+                    <li><a href="livemusic.html">🎵 Live Music</a></li>
+                    <li><a href="catering.html">🍽️ Catering</a></li>
+                    <li><a href="contact.html">📞 Contact</a></li>
+                    <li><a href="#order-online" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="diagonal-separator"></div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Our Menu</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Menu
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <div class="menu-categories">
+        <div class="category-tabs">
+            <button class="category-tab active">All Items</button>
+            <button class="category-tab">Meat Dishes</button>
+            <button class="category-tab">Vegetarian</button>
+            <button class="category-tab">Vegan Fasting</button>
+            <button class="category-tab">Combos</button>
+            <button class="category-tab">Beverages</button>
+        </div>
+    </div>
+
+    <!-- Meat Dishes Section -->
+    <section class="menu-section">
+        <div class="section-header">
+            <h2 class="section-title">Meat Dishes</h2>
+            <p class="section-description">Premium cuts of beef, lamb, and chicken prepared with traditional Ethiopian
+                spices and cooking methods</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Special Kitfo with Ayib and Gomen.png" alt="Kitfo" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🥩</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$24.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Kitfo</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag spicy">Spicy</span>
+                        <span class="tag halal">Halal</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Premium lean beef tartare delicately seasoned with mitmita spice
+                        and clarified butter. Served with ayib (cottage cheese) and gomen (collard greens).</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Special Doro Wote-1.png" alt="Doro Wat" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🍗</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$22.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Doro Wat</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag spicy">Spicy</span>
+                        <span class="tag halal">Halal</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Tender chicken drumstick simmered in rich berbere sauce with
+                        hard-boiled eggs, onions, and traditional spices. A festive Ethiopian favorite.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Special Tibes.png" alt="Tibs" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🥘</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$23.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Tibs</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag halal">Halal</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Sautéed cubes of tender beef with onions, jalapeño peppers,
+                        rosemary, and garlic. Available mild or spicy.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Gored Gored with Injera.png" alt="Gored Gored" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🌶️</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$25.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Gored Gored</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag spicy">Very Spicy</span>
+                        <span class="tag halal">Halal</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Cubed raw beef marinated in awaze sauce (berbere and wine). For
+                        those who love bold, spicy flavors.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Zilzil Tibs with Injera.png" alt="Zilzil Tibs" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🔥</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$26.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Zilzil Tibs</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag halal">Halal</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Strips of tender beef sautéed with onions, green peppers, and a
+                        touch of rosemary. Served sizzling.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Yebeg Alicha with Injera.png" alt="Yebeg Alicha" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🍲</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$24.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Yebeg Alicha</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag halal">Halal</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Mild lamb stew cooked with turmeric, garlic, ginger, and onions. A
+                        comforting non-spicy option.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vegetarian Section -->
+    <section class="menu-section">
+        <div class="section-header">
+            <h2 class="section-title">Vegetarian & Vegan</h2>
+            <p class="section-description">Colorful array of lentils, vegetables, and legumes perfect for fasting days
+                and plant-based diets</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/beyayenetu-2.png" alt="Beyainetu Combo" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🌈</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$19.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Beyainetu (Vegetarian Combo)</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarian</span>
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">A colorful sampler platter featuring all our vegetarian dishes:
+                        misir wat, kik alicha, gomen, tikil gomen, shiro, and salad.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Misir Wat with Injera.png" alt="Misir Wat" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🌶️</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$14.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Misir Wat</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag spicy">Spicy</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Red lentils simmered in berbere sauce with onions, garlic, and
+                        ginger. A protein-rich vegan favorite.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Shiro Wat with Injera.png" alt="Shiro Wat" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🥄</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$13.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Shiro Wat</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Creamy chickpea flour stew slow-cooked with onions, garlic, and
+                        traditional spices. Comfort food at its best.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Gomen with Injera.png" alt="Gomen" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🥬</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$12.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Gomen</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Fresh collard greens sautéed with onions, garlic, and ginger. A
+                        healthy and flavorful side dish.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Kik Alicha with Injera.png" alt="Kik Alicha" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🟡</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$13.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Kik Alicha</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Yellow split peas cooked with turmeric, onions, and garlic. A mild
+                        and nutritious dish.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image-container">
+                    <img src="asset/image/Tikil Gomen with Injera.png" alt="Tikil Gomen" class="menu-item-image"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=&quot;menu-item-placeholder&quot;>🥕</div>';">
+                    <div class="image-overlay"></div>
+                    <div class="price-badge">$12.99</div>
+                </div>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">Tikil Gomen</h3>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Gluten-Free</span>
+                    </div>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">Cabbage, carrots, and potatoes lightly spiced with turmeric and
+                        garlic. A colorful, healthy option.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combo Meals -->
+    <section class="combo-section">
+        <div class="section-header">
+            <h2 class="section-title">Family Combos & Platters</h2>
+            <p class="section-description">Perfect for sharing with friends and family</p>
+        </div>
+
+        <div class="combo-grid">
+            <div class="combo-card">
+                <h3>Meat Lovers Platter</h3>
+                <p>Kitfo, Doro Wat, Tibs, and Zilzil Tibs served with injera, salad, and ayib</p>
+                <div class="combo-price">$89.99</div>
+                <p class="combo-serves">Serves 3-4 people</p>
+            </div>
+
+            <div class="combo-card">
+                <h3>Mixed Platter</h3>
+                <p>A combination of 3 meat dishes and 4 vegetarian dishes of your choice</p>
+                <div class="combo-price">$79.99</div>
+                <p class="combo-serves">Serves 3-4 people</p>
+            </div>
+
+            <div class="combo-card">
+                <h3>Vegan Feast</h3>
+                <p>All our vegan dishes served on a large platter with extra injera</p>
+                <div class="combo-price">$59.99</div>
+                <p class="combo-serves">Serves 3-4 people</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beverages Section -->
+    <section class="menu-section">
+        <div class="section-header">
+            <h2 class="section-title">Beverages</h2>
+            <p class="section-description">Traditional Ethiopian drinks and modern favorites</p>
+        </div>
+
+        <div class="beverages-grid">
+            <div class="beverage-item">
+                <img src="asset/image/Coffee-1.png" alt="Ethiopian Coffee"
+                    style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="beverage-icon" style="display: none;">☕</div>
+                <h3 class="beverage-name">Ethiopian Coffee</h3>
+                <div class="beverage-price">$4.99</div>
+            </div>
+
+            <div class="beverage-item">
+                <img src="asset/image/Ethiopian Tea Service.png" alt="Ethiopian Tea"
+                    style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="beverage-icon" style="display: none;">🍵</div>
+                <h3 class="beverage-name">Ethiopian Tea</h3>
+                <div class="beverage-price">$3.99</div>
+            </div>
+
+            <div class="beverage-item">
+                <div class="beverage-icon">🍺</div>
+                <h3 class="beverage-name">St. George Beer</h3>
+                <div class="beverage-price">$6.99</div>
+            </div>
+
+            <div class="beverage-item">
+                <div class="beverage-icon">🍷</div>
+                <h3 class="beverage-name">Tej (Honey Wine)</h3>
+                <div class="beverage-price">$8.99</div>
+            </div>
+
+            <div class="beverage-item">
+                <div class="beverage-icon">🥤</div>
+                <h3 class="beverage-name">Fresh Juice</h3>
+                <div class="beverage-price">$5.99</div>
+            </div>
+
+            <div class="beverage-item">
+                <div class="beverage-icon">🥛</div>
+                <h3 class="beverage-name">Telba Juice</h3>
+                <div class="beverage-price">$6.99</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Ceremony Section -->
+    <section class="ceremony-section">
+        <h2>Traditional Ethiopian Coffee Ceremony</h2>
+        <p style="color: #666; margin-bottom: 30px;">Experience the ancient ritual of Ethiopian coffee making - a
+            ceremony that brings people together</p>
+
+        <div class="ceremony-steps">
+            <div class="ceremony-step">
+                <div class="ceremony-step-number">1</div>
+                <h4>Roasting</h4>
+                <p>Green coffee beans roasted fresh over open flame</p>
+            </div>
+            <div class="ceremony-step">
+                <div class="ceremony-step-number">2</div>
+                <h4>Grinding</h4>
+                <p>Beans ground by hand using traditional mortar and pestle</p>
+            </div>
+            <div class="ceremony-step">
+                <div class="ceremony-step-number">3</div>
+                <h4>Brewing</h4>
+                <p>Coffee brewed in traditional clay pot (jebena)</p>
+            </div>
+            <div class="ceremony-step">
+                <div class="ceremony-step-number">4</div>
+                <h4>Serving</h4>
+                <p>Served in small cups with popcorn and incense</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <div class="menu-item-price">$29.99 for full ceremony (serves 4-6)</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Our Menu</h4>
+                <p>All dishes made with 100% organic teff injera, authentic Ethiopian spices, and fresh ingredients.
+                    Halal, vegan, and gluten-free options available.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Order Now</h4>
+                <p>Call: (416) 555-1234<br>
+                    Online ordering available<br>
+                    Delivery & Pickup<br>
+                    Catering services available</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/sora-animations.js"></script>
+    <script>
+        // Menu filtering functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const menuSections = document.querySelectorAll('.menu-section');
+
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    const category = this.textContent.toLowerCase();
+
+                    // Show/hide sections based on category
+                    menuSections.forEach(section => {
+                        if (category === 'all items') {
+                            section.style.display = 'block';
+                        } else if (category === 'meat dishes' && section.querySelector('.section-title').textContent === 'Meat Dishes') {
+                            section.style.display = 'block';
+                        } else if ((category === 'vegetarian' || category === 'vegan fasting') && section.querySelector('.section-title').textContent === 'Vegetarian & Vegan') {
+                            section.style.display = 'block';
+                        } else if (category === 'combos' && section.classList.contains('combo-section')) {
+                            section.style.display = 'block';
+                        } else if (category === 'beverages' && section.querySelector('.section-title').textContent === 'Beverages') {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Add smooth scroll reveal animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all menu items
+            document.querySelectorAll('.menu-item, .combo-card, .beverage-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
+            });
+
+            // Add magnetic cursor effect
+            if (window.createMagneticCursor) {
+                createMagneticCursor();
+            }
+
+            // Add particle system
+            if (window.createParticleSystem) {
+                createParticleSystem();
+            }
+
+            // Add card tilt effects
+            if (window.addCardTiltEffect) {
+                document.querySelectorAll('.menu-item').forEach(addCardTiltEffect);
+            }
+        });
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav ul');
+                const hamburger = document.querySelector('.hamburger');
+                const overlay = document.querySelector('.mobile-overlay');
+                const body = document.body;
+
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="toggleMenu()"></div>
+</body>
+
+</html>

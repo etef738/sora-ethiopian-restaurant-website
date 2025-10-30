@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Music & Entertainment | Sora Ethiopian Restaurant | Toronto Danforth</title>
+    <meta name="description"
+        content="Experience live Ethiopian music every Friday, jazz nights Saturday at Sora Restaurant Danforth. Traditional Eskista dance, cultural performances, live bands Toronto.">
+    <meta name="keywords"
+        content="live music Toronto, Ethiopian music restaurant, Danforth live entertainment, jazz night Toronto, Eskista dance show, Ethiopian cultural events, live band restaurant">
+    <link rel="stylesheet" href="web.css">
+
+    <style>
+        /* Modern Live Music Page Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #f5e6d3;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            position: relative;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #f5e6d3;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #f5e6d3;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffd700;
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        nav {
+            background: rgba(26, 92, 46, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(245, 230, 211, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .diagonal-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #f5e6d3;
+            clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Hero Section */
+        .music-hero {
+            padding: 120px 20px;
+            text-align: center;
+            background:
+                linear-gradient(rgba(26, 92, 46, 0.7), rgba(0, 0, 0, 0.5)),
+                url('asset/image/Full Coffee ceremony.png') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-hero::before {
+            content: '🎵🎶🎸🥁✨🎤🎺🎹';
+            position: absolute;
+            top: 20px;
+            left: -50px;
+            font-size: 80px;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+            color: rgba(255, 215, 0, 0.3);
+        }
+
+        .music-hero::after {
+            content: '🎵🎶🎸🥁✨🎤🎺🎹';
+            position: absolute;
+            bottom: 20px;
+            right: -50px;
+            font-size: 80px;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite reverse;
+            color: rgba(255, 215, 0, 0.3);
+        }
+
+        .music-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-out;
+            background: linear-gradient(45deg, #ffd700, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+        }
+
+        .music-hero p {
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 25px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border: 2px solid transparent;
+            border-radius: 35px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4941e, #ffd700);
+            color: #1a5c2e;
+            box-shadow: 0 8px 25px rgba(212, 148, 30, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(212, 148, 30, 0.6);
+            background: linear-gradient(135deg, #ffd700, #fff);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a5c2e;
+            border-color: #ffffff;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.4);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1a5c2e;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #d4941e, #ffd700);
+            border-radius: 2px;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* Cultural Dance Section */
+        .cultural-dance-section {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .cultural-dance-section:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .day-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-header {
+            padding: 25px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        .friday {
+            background: linear-gradient(135deg, #d4941e, #ffd700);
+        }
+
+        .saturday {
+            background: linear-gradient(135deg, #1a5c2e, #2d7542);
+        }
+
+        .sunday {
+            background: linear-gradient(135deg, #8B4513, #CD853F);
+        }
+
+        .special {
+            background: linear-gradient(135deg, #6B46C1, #9333EA);
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .day-content {
+            padding: 30px;
+        }
+
+        .event-time {
+            background: #f0f8f4;
+            color: #1a5c2e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a5c2e;
+            margin-bottom: 15px;
+        }
+
+        .event-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .event-features li {
+            padding: 5px 0;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .event-features li:hover {
+            color: #1a5c2e;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .music-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
+        }
+
+        /* Mobile Navigation Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #1a5c2e;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 300px;
+                background-color: #ffffff;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                color: #333;
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav ul li a:hover,
+            nav ul li a.active {
+                color: #1a5c2e;
+                background-color: transparent;
+            }
+
+            nav ul li:last-child a {
+                background-color: #1a5c2e;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 5px;
+                text-align: center;
+                border-bottom: none;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="top-bar">
+                <a href="index.html" class="logo">SORA</a>
+                <div class="social-icons">
+                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
+                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
+                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
+                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">🛒 Home</a></li>
+                    <li><a href="about.html">📘 About</a></li>
+                    <li><a href="menu.html">📺 Menu</a></li>
+                    <li><a href="sportbar.html">🏈 Sport Bar</a></li>
+                    <li><a href="livemusic.html" class="active">🎵 Live Music</a></li>
+                    <li><a href="catering.html">🍽️ Catering</a></li>
+                    <li><a href="blog.html">📝 Blog</a></li>
+                    <li><a href="contact.html">📞 Contact</a></li>
+                    <li><a href="#order-online" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="diagonal-separator"></div>
+    </header>
+
+    <!-- Music Hero Section -->
+    <section class="music-hero">
+        <h1>🎵 Live Music & Entertainment 🎵</h1>
+        <p>Experience the vibrant sounds of Ethiopia with live music, traditional dance, and cultural performances every
+            weekend</p>
+        <div class="hero-buttons">
+            <a href="#schedule" class="btn btn-primary">View Schedule</a>
+            <a href="#booking" class="btn btn-secondary">Book Your Table</a>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section" id="schedule">
+        <h2 class="section-title">Weekly Entertainment Schedule</h2>
+        <div class="schedule-grid">
+            <div class="day-card">
+                <div class="day-header friday">
+                    <h3>🎸 Friday Nights</h3>
+                    <p>Traditional Ethiopian Music</p>
+                </div>
+                <div class="day-content">
+                    <div class="event-time">8:00 PM - 11:00 PM</div>
+                    <div class="event-title">Authentic Ethiopian Sounds</div>
+                    <p class="event-description">Experience traditional Ethiopian music with live krar, masenqo, and
+                        vocal performances that transport you to the heart of Ethiopia.</p>
+                    <ul class="event-features">
+                        <li>✓ Traditional instruments</li>
+                        <li>✓ Eskista dance performances</li>
+                        <li>✓ Audience participation</li>
+                        <li>✓ Cultural storytelling</li>
+                        <li>✓ No cover charge</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header saturday">
+                    <h3>🎺 Saturday Nights</h3>
+                    <p>Ethio-Jazz Fusion</p>
+                </div>
+                <div class="day-content">
+                    <div class="event-time">8:00 PM - 11:30 PM</div>
+                    <div class="event-title">Ethiopian Jazz Night</div>
+                    <p class="event-description">Modern Ethiopian jazz fusion combining traditional melodies with
+                        contemporary jazz arrangements.</p>
+                    <ul class="event-features">
+                        <li>✓ Jazz fusion performances</li>
+                        <li>✓ Guest musicians</li>
+                        <li>✓ Ethio-jazz classics</li>
+                        <li>✓ Dance floor open</li>
+                        <li>✓ Special cocktail menu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header sunday">
+                    <h3>☕ Sunday Afternoons</h3>
+                    <p>Coffee & Culture</p>
+                </div>
+                <div class="day-content">
+                    <div class="event-time">2:00 PM - 5:00 PM</div>
+                    <div class="event-title">Coffee Ceremony & Music</div>
+                    <p class="event-description">Relaxing Sunday with traditional coffee ceremony accompanied by
+                        acoustic Ethiopian melodies.</p>
+                    <ul class="event-features">
+                        <li>✓ Live coffee ceremony</li>
+                        <li>✓ Acoustic performances</li>
+                        <li>✓ Poetry readings</li>
+                        <li>✓ Cultural stories</li>
+                        <li>✓ Family friendly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Special Events Text Section -->
+            <div class="day-card">
+                <div class="day-header special">
+                    <h3>🎉 Special Events</h3>
+                    <p>Monthly Celebrations</p>
+                </div>
+                <div class="day-content">
+                    <div class="event-time">Various Times</div>
+                    <div class="event-title">Cultural Celebrations</div>
+                    <p class="event-description">Monthly special events celebrating Ethiopian holidays, festivals, and
+                        cultural milestones.</p>
+                    <ul class="event-features">
+                        <li>✓ Ethiopian New Year</li>
+                        <li>✓ Meskel celebration</li>
+                        <li>✓ Timkat festival</li>
+                        <li>✓ Guest performers</li>
+                        <li>✓ Traditional ceremonies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cultural Dance Image Section -->
+            <div class="cultural-dance-section">
+                <div class="cultural-dance-box">
+                    <img src="asset/image/Full Coffee ceremony.png" alt="Ethiopian Cultural Dance"
+                        class="cultural-dance-img">
+                    <div class="dance-overlay">
+                        <h4>Traditional Dance</h4>
+                        <p>Experience authentic Ethiopian cultural performances</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for animations -->
+    <script src="script/sora-animations.js"></script>
+    <script>
+        // Additional animations specifically for live music page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.day-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                observer.observe(card);
+            });
+
+            // Music notes animation
+            function createMusicNote() {
+                const notes = ['♪', '♫', '♬', '🎵', '🎶'];
+                const note = document.createElement('div');
+                note.innerHTML = notes[Math.floor(Math.random() * notes.length)];
+                note.style.position = 'fixed';
+                note.style.left = Math.random() * 100 + 'vw';
+                note.style.animationDuration = Math.random() * 3 + 2 + 's';
+                note.style.opacity = '0.6';
+                note.style.fontSize = '24px';
+                note.style.color = '#1a5c2e';
+                note.style.pointerEvents = 'none';
+                note.style.zIndex = '1000';
+                note.style.animation = 'floatUp 4s linear forwards';
+
+                document.body.appendChild(note);
+
+                setTimeout(() => {
+                    note.remove();
+                }, 4000);
+            }
+
+            // Create floating music notes periodically
+            setInterval(createMusicNote, 2000);
+
+            // Add floating animation CSS
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes floatUp {
+                    to {
+                        transform: translateY(-100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+
+    <!-- Cultural Events Section -->
+    <section class="cultural-section">
+        <h2 class="section-title">Upcoming Cultural Events</h2>
+        <div class="cultural-grid">
+            <div class="cultural-card cultural-left">
+                <div class="cultural-image-left">
+                    <img src="asset/image/Full Coffee ceremony.png" alt="Ethiopian Coffee Ceremony"
+                        class="cultural-img">
+                </div>
+                <div class="cultural-content">
+                    <span class="cultural-icon">🎊</span>
+                    <h3>Ethiopian New Year Celebration</h3>
+                    <p>Join us for Enkutatash, the Ethiopian New Year celebration with special performances, traditional
+                        feast, and cultural ceremonies.</p>
+                    <span class="cultural-date">September 11, 2025</span>
+                </div>
+                <div class="cultural-image-right">
+                    <img src="asset/image/Traditional SERVICE Coffee -1.png" alt="Traditional Ethiopian Service"
+                        class="cultural-img">
+                </div>
+            </div>
+
+            <div class="cultural-card cultural-right">
+                <div class="cultural-image-left">
+                    <img src="asset/image/Special Doro Wote.png" alt="Special Doro Wot" class="cultural-img">
+                </div>
+                <div class="cultural-content">
+                    <span class="cultural-icon">✝️</span>
+                    <h3>Meskel Festival</h3>
+                    <p>Celebrate the Finding of the True Cross with traditional bonfire ceremony, music, dance, and
+                        special
+                        menu.</p>
+                    <span class="cultural-date">September 27, 2025</span>
+                </div>
+                <div class="cultural-image-right">
+                    <img src="asset/image/Indigenous Teff Injera.png" alt="Traditional Injera" class="cultural-img">
+                </div>
+            </div>
+
+            <div class="cultural-card cultural-left">
+                <div class="cultural-image-left">
+                    <img src="asset/image/Special Organic Vegetables.png" alt="Ethiopian Vegetables"
+                        class="cultural-img">
+                </div>
+                <div class="cultural-content">
+                    <span class="cultural-icon">🎭</span>
+                    <h3>Cultural Heritage Night</h3>
+                    <p>Monthly showcase of Ethiopian arts, crafts, traditional clothing, and performances celebrating
+                        our
+                        rich heritage.</p>
+                    <span class="cultural-date">First Saturday Monthly</span>
+                </div>
+                <div class="cultural-image-right">
+                    <img src="asset/image/beyayenetu-2.png" alt="Ethiopian Beyayenetu" class="cultural-img">
+                </div>
+            </div>
+
+            <div class="cultural-card cultural-right">
+                <div class="cultural-image-left">
+                    <img src="asset/image/Shekela-Tibes.png" alt="Shekela Tibes" class="cultural-img">
+                </div>
+                <div class="cultural-content">
+                    <span class="cultural-icon">🎵</span>
+                    <h3>Open Mic Night</h3>
+                    <p>Platform for local Ethiopian and African artists to showcase their talents. Poetry, music, and
+                        storytelling.</p>
+                    <span class="cultural-date">Last Thursday Monthly</span>
+                </div>
+                <div class="cultural-image-right">
+                    <img src="asset/image/Coffee-1.png" alt="Ethiopian Coffee" class="cultural-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
+        <div class="booking-content">
+            <h2 class="section-title">Book Your Experience</h2>
+            <p>Reserve your table for an unforgettable night of music, dance, and authentic Ethiopian cuisine</p>
+
+            <div class="booking-options">
+                <div class="booking-card booking-left">
+                    <div class="booking-image-left">
+                        <img src="asset/image/Special Tibes.png" alt="Ethiopian Special Tibes" class="booking-img">
+                    </div>
+                    <div class="booking-content-center">
+                        <div class="booking-icon">🎵</div>
+                        <h3>Regular Table</h3>
+                        <p>Enjoy dinner with live entertainment. Perfect for couples and small groups.</p>
+                        <div class="booking-price">No Cover Charge</div>
+                    </div>
+                    <div class="booking-image-right">
+                        <img src="asset/image/beyayentu-1.png" alt="Ethiopian Beyayentu" class="booking-img">
+                    </div>
+                </div>
+
+                <div class="booking-card booking-right">
+                    <div class="booking-image-left">
+                        <img src="asset/image/Special Zelezel Tibes Family size.png" alt="Zelezel Tibes Family"
+                            class="booking-img">
+                    </div>
+                    <div class="booking-content-center">
+                        <div class="booking-icon">🎉</div>
+                        <h3>VIP Section</h3>
+                        <p>Premium seating near the stage with dedicated service and complimentary appetizers.</p>
+                        <div class="booking-price">$25 per person</div>
+                    </div>
+                    <div class="booking-image-right">
+                        <img src="asset/image/Doro Arosto With Basmati Rice and Vegetables.png" alt="Doro Arosto"
+                            class="booking-img">
+                    </div>
+                </div>
+
+                <div class="booking-card booking-center">
+                    <div class="booking-image-left">
+                        <img src="asset/image/Special Vegetables.png" alt="Ethiopian Special Vegetables"
+                            class="booking-img">
+                    </div>
+                    <div class="booking-content-center">
+                        <div class="booking-icon">🎊</div>
+                        <h3>Private Events</h3>
+                        <p>Book our venue for private parties with customized entertainment and menu.</p>
+                        <div class="booking-price">Contact for Quote</div>
+                    </div>
+                    <div class="booking-image-right">
+                        <img src="asset/image/beyayentu-yestom.png" alt="Beyayentu Yestom" class="booking-img">
+                    </div>
+                </div>
+            </div>
+
+            <a href="contact.html" class="btn btn-primary"
+                style="font-size: 20px; padding: 18px 40px; margin-top: 20px;">Make a Reservation</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">Moments from Our Stage</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-bg1">🎸<div class="gallery-caption">Friday Night Traditional Band</div>
+            </div>
+            <div class="gallery-item gallery-bg2">💃<div class="gallery-caption">Eskista Dance Performance</div>
+            </div>
+            <div class="gallery-item gallery-bg3">🎺<div class="gallery-caption">Saturday Jazz Night</div>
+            </div>
+            <div class="gallery-item gallery-bg4">🥁<div class="gallery-caption">Traditional Drummers</div>
+            </div>
+            <div class="gallery-item gallery-bg5">🎤<div class="gallery-caption">Open Mic Night</div>
+            </div>
+            <div class="gallery-item gallery-bg6">☕<div class="gallery-caption">Sunday Coffee & Music</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Live Entertainment</h4>
+                <p>Experience the best of Ethiopian music and culture at Sora. Live performances every Friday and
+                    Saturday night, plus special cultural events throughout the year.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Performance Schedule</h4>
+                <ul>
+                    <li>Friday: Traditional Music (8-11 PM)</li>
+                    <li>Saturday: Jazz Night (8-11:30 PM)</li>
+                    <li>Sunday: Coffee & Culture (2-5 PM)</li>
+                    <li>Special Events: Check Calendar</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Book Your Night</h4>
+                <p>Reservations: (416) 555-1234<br>
+                    Email: events@soraethiopian.ca<br>
+                    <br>
+                    Walk-ins welcome based on availability
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="toggleMenu()"></div>
+
+    <!-- JavaScript for Mobile Navigation -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav ul');
+                const hamburger = document.querySelector('.hamburger');
+                const overlay = document.querySelector('.mobile-overlay');
+                const body = document.body;
+
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

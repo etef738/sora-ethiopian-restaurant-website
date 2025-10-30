@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sora Ethiopian Restaurant | Danforth Toronto Location</title>
+    <meta name="description"
+        content="Visit Sora Ethiopian Restaurant on Danforth Avenue, East York Toronto. Contact us for reservations, catering, or events. Open daily 11am-11pm. Phone: (416) 555-1234">
+    <meta name="keywords"
+        content="Sora Ethiopian restaurant contact, Danforth Avenue restaurant, East York Toronto Ethiopian food, Ethiopian restaurant reservations, Ethiopian catering Toronto">
+    <link rel="stylesheet" href="web.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5e6d3;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header with Clean Diagonal Separation */
+        header {
+            background: #1a5c2e;
+            position: relative;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #f5e6d3;
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            transition: all 0.3s;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #f5e6d3;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffd700;
+        }
+
+        nav {
+            background: rgba(26, 92, 46, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #f5e6d3;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(245, 230, 211, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .diagonal-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #f5e6d3;
+            clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5e6d3 0%, #fff 100%);
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            color: #1a5c2e;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .breadcrumb {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #1a5c2e;
+            text-decoration: none;
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 148, 30, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .contact-card:hover::before {
+            left: 100%;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: rgba(212, 148, 30, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 56px;
+            color: #d4941e;
+            margin-bottom: 25px;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            filter: drop-shadow(0 5px 15px rgba(212, 148, 30, 0.2));
+        }
+
+        .contact-card h3 {
+            font-size: 24px;
+            color: #1a5c2e;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            color: #1a5c2e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #d4941e;
+        }
+
+        /* Map & Form Section */
+        .map-form-section {
+            background: white;
+            padding: 60px 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .map-container {
+            background: #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 500px;
+            position: relative;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .map-placeholder h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .directions-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #ffd700;
+            color: #1a5c2e;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .directions-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            padding: 20px;
+        }
+
+        .contact-form h2 {
+            font-size: 32px;
+            color: #1a5c2e;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #1a5c2e;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1a5c2e;
+            box-shadow: 0 0 0 4px rgba(26, 92, 46, 0.2);
+            transform: translateY(-2px);
+            background: white;
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover,
+        .form-group select:hover {
+            border-color: #d4941e;
+            transform: translateY(-1px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #1a5c2e, #2d7542);
+            color: white;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(26, 92, 46, 0.3);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #0e3018, #1a5c2e);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hours Section */
+        .hours-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: #1a5c2e;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4941e;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hours-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hours-card h3 {
+            color: #d4941e;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+            color: #1a5c2e;
+        }
+
+        .time {
+            color: #666;
+        }
+
+        /* Special Events Section */
+        .events-section {
+            background: linear-gradient(135deg, #1a5c2e 0%, #2d7542 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .events-section .section-title {
+            color: white;
+        }
+
+        .events-section .section-title::after {
+            background: #ffd700;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .event-card h3 {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .event-card p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .event-card a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .event-card a:hover {
+            background: #ffd700;
+            color: #1a5c2e;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px 30px;
+            background: #f8f8f8;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f0f0f0;
+        }
+
+        .faq-question h3 {
+            color: #1a5c2e;
+            font-size: 18px;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: #d4941e;
+        }
+
+        .faq-answer {
+            padding: 20px 30px;
+            color: #666;
+            line-height: 1.8;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a5c2e;
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #f5e6d3;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #f5e6d3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .map-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile Navigation Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #1a5c2e;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 300px;
+                background-color: #ffffff;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+                color: #333;
+                text-decoration: none;
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav ul li a:hover,
+            nav ul li a.active {
+                color: #1a5c2e;
+                background-color: transparent;
+            }
+
+            nav ul li:last-child a {
+                background-color: #1a5c2e;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 5px;
+                text-align: center;
+                border-bottom: none;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="top-bar">
+                <a href="index.html" class="logo">SORA</a>
+                <div class="social-icons">
+                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
+                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
+                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
+                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">🛒 Home</a></li>
+                    <li><a href="about.html">📘 About</a></li>
+                    <li><a href="menu.html">📺 Menu</a></li>
+                    <li><a href="sportbar.html">🏈 Sport Bar</a></li>
+                    <li><a href="livemusic.html">🎵 Live Music</a></li>
+                    <li><a href="catering.html">🍽️ Catering</a></li>
+                    <li><a href="contact.html" class="active">📞 Contact</a></li>
+                    <li><a href="#order-online" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="diagonal-separator"></div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Contact
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>1234 Danforth Avenue<br>
+                    East York, Toronto<br>
+                    ON M4J 1N2<br>
+                    <a href="#map">Get Directions</a>
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>Main: <a href="tel:+14165551234">(416) 555-1234</a><br>
+                    Catering: <a href="tel:+14165555678">(416) 555-5678</a><br>
+                    Reservations Welcome<br>
+                    Walk-ins Available</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Us</h3>
+                <p>General: <a href="mailto:info@soraethiopian.ca">info@soraethiopian.ca</a><br>
+                    Catering: <a href="mailto:catering@soraethiopian.ca">catering@soraethiopian.ca</a><br>
+                    Events: <a href="mailto:events@soraethiopian.ca">events@soraethiopian.ca</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact Form -->
+    <section class="map-form-section">
+        <div class="map-form-grid">
+            <div class="map-container" id="map">
+                <div class="map-placeholder">
+                    <h3>📍 Find Us Here</h3>
+                    <p>1234 Danforth Avenue</p>
+                    <p>East York, Toronto, ON M4J 1N2</p>
+                    <p style="margin-top: 20px;">Near Donlands Station</p>
+                    <p>Free Street Parking Available</p>
+                    <a href="https://maps.google.com" target="_blank" class="directions-btn">Get Directions</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="reservation">Table Reservation</option>
+                            <option value="catering">Catering Inquiry</option>
+                            <option value="event">Private Event</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required
+                            placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours-section">
+        <h2 class="section-title">Hours of Operation</h2>
+        <div class="hours-grid">
+            <div class="hours-card">
+                <h3>Restaurant Hours</h3>
+                <div class="hours-item">
+                    <span class="day">Monday - Thursday</span>
+                    <span class="time">11:00 AM - 10:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Friday - Saturday</span>
+                    <span class="time">11:00 AM - 11:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Sunday</span>
+                    <span class="time">12:00 PM - 10:00 PM</span>
+                </div>
+            </div>
+
+            <div class="hours-card">
+                <h3>Sport Bar & Entertainment</h3>
+                <div class="hours-item">
+                    <span class="day">Live Music (Fri)</span>
+                    <span class="time">8:00 PM - 11:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Jazz Night (Sat)</span>
+                    <span class="time">8:00 PM - 11:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Sport Events</span>
+                    <span class="time">As Scheduled</span>
+                </div>
+            </div>
+
+            <div class="hours-card">
+                <h3>Coffee Ceremony</h3>
+                <div class="hours-item">
+                    <span class="day">Daily</span>
+                    <span class="time">2:00 PM - 9:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Reservations</span>
+                    <span class="time">Recommended</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Duration</span>
+                    <span class="time">45-60 minutes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Events Section -->
+    <section class="events-section">
+        <h2 class="section-title">Host Your Event With Us</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <h3>Private Dining</h3>
+                <p>Reserve our private dining area for intimate gatherings, business meetings, or special celebrations.
+                    Accommodates up to 30 guests.</p>
+                <a href="tel:+14165551234">Book Now</a>
+            </div>
+
+            <div class="event-card">
+                <h3>Catering Services</h3>
+                <p>Bring authentic Ethiopian cuisine to your event. We cater weddings, corporate events, and private
+                    parties throughout Toronto.</p>
+                <a href="mailto:catering@soraethiopian.ca">Get Quote</a>
+            </div>
+
+            <div class="event-card">
+                <h3>Cultural Events</h3>
+                <p>Host traditional Ethiopian celebrations, coffee ceremonies, or cultural presentations. We provide
+                    authentic ambiance and cuisine.</p>
+                <a href="mailto:events@soraethiopian.ca">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you take reservations?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we accept reservations for parties of any size. You can call us at (416) 555-1234 or use our
+                    online booking system. Walk-ins are also welcome based on availability.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Is parking available?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Free street parking is available on Danforth Avenue and surrounding streets. We're also a 5-minute
+                    walk from Donlands subway station.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you offer delivery and takeout?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer both delivery and takeout services. You can order directly through our website or call
+                    us. We also partner with major delivery apps for your convenience.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Can you accommodate dietary restrictions?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! We offer vegan, vegetarian, halal, and gluten-free options. Please inform your server
+                    about any allergies or dietary requirements, and we'll be happy to accommodate.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you have a minimum for catering orders?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our minimum catering order is for 10 people. We require at least 48 hours notice for catering orders.
+                    For large events (50+ people), please give us at least one week's notice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>1234 Danforth Avenue<br>
+                    East York, Toronto, ON M4J 1N2<br>
+                    Phone: (416) 555-1234<br>
+                    Email: info@soraethiopian.ca</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p>Stay connected for updates, special offers, and events:<br><br>
+                    Facebook | Instagram | YouTube</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Modern Animations -->
+    <script src="script/sora-animations.js"></script>
+    <script>
+        // Enhanced FAQ toggle functionality with animations
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                const answer = parent.querySelector('.faq-answer');
+                const toggle = parent.querySelector('.faq-toggle');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== parent && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherToggle = otherItem.querySelector('.faq-toggle');
+                        otherAnswer.style.maxHeight = '0';
+                        otherToggle.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current item
+                parent.classList.toggle('active');
+
+                if (parent.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    toggle.style.transform = 'rotate(45deg)';
+                    answer.style.opacity = '1';
+                } else {
+                    answer.style.maxHeight = '0';
+                    toggle.style.transform = 'rotate(0deg)';
+                    answer.style.opacity = '0';
+                }
+            });
+        });
+
+        // Initialize FAQ styles
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.maxHeight = '0';
+            answer.style.overflow = 'hidden';
+            answer.style.transition = 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
+            answer.style.opacity = '0';
+        });
+
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.style.transition = 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        });
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav ul');
+                const hamburger = document.querySelector('.hamburger');
+                const overlay = document.querySelector('.mobile-overlay');
+                const body = document.body;
+
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="toggleMenu()"></div>
+</body>
+
+</html>
