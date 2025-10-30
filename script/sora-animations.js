@@ -757,9 +757,121 @@ function initSportBarAnimations() {
     // Already implemented in the HTML file
 }
 
+// ===== RESPONSIVE HAMBURGER MENU SYSTEM =====
+// jQuery-like functionality for mobile/tablet responsive navigation
+let menuOpen = false;
+
+function toggleMenu() {
+    const nav = document.querySelector('#nav-menu') || document.querySelector('nav');
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.menu-overlay') || createMenuOverlay();
+
+    if (!menuOpen) {
+        // Open menu - jQuery-like animate()
+        if (nav) {
+            nav.classList.add('menu-open');
+            nav.style.right = '0';
+        }
+        if (hamburger) {
+            hamburger.classList.add('active');
+        }
+        if (overlay) {
+            overlay.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+        menuOpen = true;
+    } else {
+        // Close menu - jQuery-like animate()
+        if (nav) {
+            nav.classList.remove('menu-open');
+            nav.style.right = '-100%';
+        }
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
+        document.body.style.overflow = 'auto'; // Restore background scroll
+        menuOpen = false;
+    }
+}
+
+function createMenuOverlay() {
+    let overlay = document.querySelector('.menu-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        overlay.addEventListener('click', toggleMenu); // Close menu when clicking overlay
+        document.body.appendChild(overlay);
+    }
+    return overlay;
+}
+
+// Close menu when clicking navigation links (mobile)
+function closeMenuOnNavClick() {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768 && menuOpen) {
+                toggleMenu();
+            }
+        });
+    });
+}
+
+// Handle window resize - show/hide hamburger based on screen size
+function handleResize() {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('#nav-menu') || document.querySelector('nav');
+    const overlay = document.querySelector('.menu-overlay');
+
+    if (window.innerWidth > 768) {
+        // Desktop mode - reset menu state
+        if (nav) {
+            nav.classList.remove('menu-open');
+            nav.style.right = 'auto';
+        }
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
+        document.body.style.overflow = 'auto';
+        menuOpen = false;
+    }
+}
+
+// Initialize responsive navigation system
+function initResponsiveNavigation() {
+    // Create overlay if it doesn't exist
+    createMenuOverlay();
+
+    // Bind navigation link clicks
+    closeMenuOnNavClick();
+
+    // Handle window resize
+    window.addEventListener('resize', handleResize);
+
+    // Handle escape key to close menu
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOpen) {
+            toggleMenu();
+        }
+    });
+
+    // Initialize proper state on load
+    handleResize();
+}
+
+// Make toggleMenu globally available
+window.toggleMenu = toggleMenu;
+
 // Initialize everything when DOM loads
 document.addEventListener('DOMContentLoaded', () => {
     initSoraAnimations();
+    initResponsiveNavigation(); // Initialize responsive menu system
     setTimeout(() => {
         initPageSpecificAnimations();
     }, 1000);
