@@ -58,12 +58,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
         .social-icons {
             display: flex;
             gap: 20px;
@@ -110,56 +104,6 @@
             background: rgba(245, 230, 211, 0.2);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Hamburger Menu Styles */
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            width: 40px;
-            height: 32px;
-            position: relative;
-            z-index: 1002;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger:hover {
-            background: rgba(245, 230, 211, 0.1);
-        }
-
-        .hamburger span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background: #f5e6d3;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        }
-
-        .hamburger span:nth-child(1) {
-            margin-bottom: 6px;
-        }
-
-        .hamburger span:nth-child(2) {
-            margin-bottom: 6px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
         }
 
         .diagonal-separator {
@@ -578,18 +522,6 @@
             }
         }
 
-        /* Tablet Navigation */
-        @media (max-width: 1024px) {
-            nav ul {
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 16px;
-                padding: 6px 12px;
-            }
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .sport-hero h1 {
@@ -604,128 +536,24 @@
             .btn {
                 width: 250px;
             }
-
-            .social-icons {
-                display: none;
-            }
-
-            /* Mobile Navigation */
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 280px;
-                background: rgba(26, 92, 46, 0.98);
-                backdrop-filter: blur(20px);
-                transition: right 0.3s ease;
-                z-index: 1000;
-                padding-top: 80px;
-                border-radius: 0;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-                padding: 20px;
-            }
-
-            nav ul li {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            nav a {
-                display: block;
-                width: 100%;
-                padding: 15px 20px;
-                text-align: left;
-                border-radius: 10px;
-                font-size: 18px;
-            }
-
-            nav a:hover,
-            nav a.active {
-                background: rgba(245, 230, 211, 0.3);
-                transform: translateX(5px);
-            }
-
-            /* Mobile Overlay */
-            .mobile-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .mobile-overlay.active {
-                display: block;
-                opacity: 1;
-            }
-        }
-
-        /* Extra small screens */
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 28px;
-            }
-
-            .hamburger {
-                width: 35px;
-                height: 28px;
-            }
-
-            nav {
-                width: 100%;
-                right: -100%;
-            }
-
-            nav.active {
-                right: 0;
-            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-overlay" id="mobile-overlay" onclick="toggleMenu()"></div>
-
     <!-- Header Section -->
     <header>
         <div class="header-content">
             <div class="top-bar">
                 <a href="index.html" class="logo">SORA</a>
-                <div class="nav-controls">
-                    <!-- Hamburger Menu Button -->
-                    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <div class="social-icons">
-                        <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
-                        <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
-                        <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
-                        <a href="tel:+14165551234" aria-label="Call us">☎️</a>
-                    </div>
+                <div class="social-icons">
+                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
+                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
+                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
+                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
                 </div>
             </div>
-            <nav id="nav-menu">
+            <nav>
                 <ul>
                     <li><a href="index.html">🛒 Home</a></li>
                     <li><a href="about.html">📘 About</a></li>
@@ -970,50 +798,9 @@
         </div>
     </footer>
 
-    <!-- Copyright Notice -->
-    <div
-        style="background-color: #0d3a1a; color: #f5e6d3; text-align: center; padding: 15px 20px; font-size: 14px; border-top: 1px solid rgba(245, 230, 211, 0.2);">
-        Copyright © 2024 Sora Ethiopian Restaurant. All rights reserved.
-    </div>
-
     <!-- JavaScript for animations -->
     <script src="script/sora-animations.js"></script>
     <script>
-        // Hamburger Menu Toggle Function
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.getElementById('nav-menu');
-            const overlay = document.getElementById('mobile-overlay');
-
-            hamburger.classList.toggle('active');
-            nav.classList.toggle('active');
-            overlay.classList.toggle('active');
-
-            // Prevent body scroll when menu is open
-            if (nav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close menu when clicking on nav links
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    const hamburger = document.querySelector('.hamburger');
-                    const nav = document.getElementById('nav-menu');
-                    const overlay = document.getElementById('mobile-overlay');
-
-                    hamburger.classList.remove('active');
-                    nav.classList.remove('active');
-                    overlay.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            });
-        });
-
         // Additional animations specifically for sport bar page
         document.addEventListener('DOMContentLoaded', function () {
             // Animate cards on scroll
