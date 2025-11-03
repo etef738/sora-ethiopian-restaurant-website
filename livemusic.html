@@ -9,7 +9,7 @@
         content="Experience live Ethiopian music every Friday, jazz nights Saturday at Sora Restaurant Danforth. Traditional Eskista dance, cultural performances, live bands Toronto.">
     <meta name="keywords"
         content="live music Toronto, Ethiopian music restaurant, Danforth live entertainment, jazz night Toronto, Eskista dance show, Ethiopian cultural events, live band restaurant">
-    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="css/web.css">
 
     <style>
         /* Modern Live Music Page Styles */
@@ -580,18 +580,32 @@
     <header>
         <div class="header-content">
             <div class="top-bar">
-                <a href="index.html" class="logo">SORA</a>
-                <div class="social-icons">
-                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
-                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
-                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
-                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
+                <a href="index.html" class="logo">
+                    <img src="asset/icons/soralogo.png" alt="Sora Ethiopian Restaurant" class="logo-img">
+                    <span class="logo-text">SORA</span>
+                </a>
+                <div class="nav-controls">
+                    <!-- Hamburger Menu Button -->
+                    <div id="hamburger" onclick="toggleMenu();">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">
+                            <img src="asset/icons/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">
+                            <img src="asset/icons/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">
+                            <img src="asset/icons/youtube.png" alt="YouTube">
+                        </a>
+                        <a href="https://wa.me/14165551234" aria-label="WhatsApp">
+                            <img src="asset/icons/whatsapp.png" alt="WhatsApp">
+                        </a>
+                    </div>
                 </div>
-                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
             <nav>
                 <ul>
@@ -603,7 +617,7 @@
                     <li><a href="catering.html">🍽️ Catering</a></li>
                     <li><a href="blog.html">📝 Blog</a></li>
                     <li><a href="contact.html">📞 Contact</a></li>
-                    <li><a href="#order-online" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
+                    <li><a href="menu.html" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
                     </li>
                 </ul>
             </nav>

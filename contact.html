@@ -9,7 +9,7 @@
         content="Visit Sora Ethiopian Restaurant on Danforth Avenue, East York Toronto. Contact us for reservations, catering, or events. Open daily 11am-11pm. Phone: (416) 555-1234">
     <meta name="keywords"
         content="Sora Ethiopian restaurant contact, Danforth Avenue restaurant, East York Toronto Ethiopian food, Ethiopian restaurant reservations, Ethiopian catering Toronto">
-    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="css/web.css">
 
     <style>
         * {
@@ -827,18 +827,32 @@
     <header>
         <div class="header-content">
             <div class="top-bar">
-                <a href="index.html" class="logo">SORA</a>
-                <div class="social-icons">
-                    <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">�</a>
-                    <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">�</a>
-                    <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">🎬</a>
-                    <a href="tel:+14165551234" aria-label="Call us">☎️</a>
+                <a href="index.html" class="logo">
+                    <img src="asset/icons/soralogo.png" alt="Sora Ethiopian Restaurant" class="logo-img">
+                    <span class="logo-text">SORA</span>
+                </a>
+                <div class="nav-controls">
+                    <!-- Hamburger Menu Button -->
+                    <div id="hamburger" onclick="toggleMenu();">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/sorarestaurant" aria-label="Facebook">
+                            <img src="asset/icons/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com/sorarestaurant" aria-label="Instagram">
+                            <img src="asset/icons/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://youtube.com/sorarestaurant" aria-label="YouTube">
+                            <img src="asset/icons/youtube.png" alt="YouTube">
+                        </a>
+                        <a href="https://wa.me/14165551234" aria-label="WhatsApp">
+                            <img src="asset/icons/whatsapp.png" alt="WhatsApp">
+                        </a>
+                    </div>
                 </div>
-                <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
 
             <nav>
@@ -849,8 +863,9 @@
                     <li><a href="sportbar.html">🏈 Sport Bar</a></li>
                     <li><a href="livemusic.html">🎵 Live Music</a></li>
                     <li><a href="catering.html">🍽️ Catering</a></li>
+                    <li><a href="blog.html">📝 Blog</a></li>
                     <li><a href="contact.html" class="active">📞 Contact</a></li>
-                    <li><a href="#order-online" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
+                    <li><a href="menu.html" class="btn btn-secondary" style="padding: 8px 20px;">📷 Order Online</a>
                     </li>
                 </ul>
             </nav>
@@ -898,22 +913,67 @@
         </div>
     </section>
 
-    <!-- Map & Contact Form -->
-    <section class="map-form-section">
-        <div class="map-form-grid">
-            <div class="map-container" id="map">
-                <div class="map-placeholder">
-                    <div class="location-info-box">
-                        <h3>📍 Find Us Here</h3>
-                        <p>1234 Danforth Avenue</p>
-                        <p>East York, Toronto, ON M4J 1N2</p>
-                        <p style="margin-top: 15px; font-weight: 600;">Near Donlands Station</p>
-                        <p style="color: #ffd700; font-weight: 600;">Free Street Parking Available</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=1234+Danforth+Avenue,+East+York,+Toronto,+ON+M4J+1N2"
-                            target="_blank" class="directions-btn">Get Directions</a>
+    <!-- Interactive Map & Contact Form -->
+    <section class="location-section">
+        <div class="location-container">
+            <div class="location-info">
+                <h2 class="section-title">Visit Our Restaurant</h2>
+                <div class="location-details">
+                    <div class="location-item">
+                        <div class="location-icon">📍</div>
+                        <div class="location-text">
+                            <h3>Our Location</h3>
+                            <p>1234 Danforth Avenue<br>East York, Toronto, ON M4J 1N2</p>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-icon">🚇</div>
+                        <div class="location-text">
+                            <h3>Transit Access</h3>
+                            <p>5 minutes from Donlands Station<br>Near Greenwood Station<br>Free street parking
+                                available</p>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-icon">⏰</div>
+                        <div class="location-text">
+                            <h3>Opening Hours</h3>
+                            <p>Open Daily: 11:00 AM - 11:00 PM<br>Kitchen closes at 10:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-buttons">
+                    <a href="https://www.google.com/maps/search/?api=1&query=1234+Danforth+Avenue,+East+York,+Toronto,+ON+M4J+1N2"
+                        target="_blank" class="btn btn-primary">Get Directions</a>
+                    <a href="tel:+14165551234" class="btn btn-secondary">Call Now</a>
+                </div>
+            </div>
+            <div class="map-container">
+                <div class="map-frame">
+                    <iframe
+                        src="https://www.bing.com/maps/embed?h=400&w=600&cp=43.682224~-79.327950&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+                        width="100%" height="400" frameborder="0" scrolling="no"
+                        title="Sora Ethiopian Restaurant Location">
+                    </iframe>
+                    <div class="map-overlay">
+                        <div class="map-marker">
+                            <div class="marker-pulse"></div>
+                            <div class="marker-icon">🍽️</div>
+                        </div>
+                        <div class="map-info">
+                            <h4>Sora Ethiopian Restaurant</h4>
+                            <p>Authentic Ethiopian Cuisine</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="map-form-section">
+        <div class="map-form-grid">
+            <div style="display: none;"></div>
 
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
@@ -1186,17 +1246,7 @@
             toggle.style.transition = 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
         });
 
-        function toggleMenu() {
-            const nav = document.querySelector('nav ul');
-            const hamburger = document.querySelector('.hamburger');
-            const overlay = document.querySelector('.mobile-overlay');
-            const body = document.body;
-
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            overlay.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
+        // Use the same hamburger functionality from sora-animations.js
 
         // Close menu when clicking on a link
         document.querySelectorAll('nav ul li a').forEach(link => {

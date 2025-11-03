@@ -503,6 +503,88 @@ function parallaxHero() {
     });
 }
 
+// ===== HERO BACKGROUND IMAGE SETUP =====
+function initHeroBackground() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    // Only apply to home page
+    const isHomePage = window.location.pathname === '/' ||
+        window.location.pathname.endsWith('index.html') ||
+        window.location.pathname === '';
+
+    if (!isHomePage) return;
+
+    // Set up hero background image with overlay
+    hero.style.backgroundImage = `
+        linear-gradient(
+            rgba(26, 92, 46, 0.4), 
+            rgba(26, 92, 46, 0.6)
+        ),
+        url('asset/image/homehero.png')
+    `;
+    hero.style.backgroundSize = 'cover';
+    hero.style.backgroundPosition = 'center center';
+    hero.style.backgroundRepeat = 'no-repeat';
+    hero.style.backgroundAttachment = 'fixed';
+    hero.style.position = 'relative';
+
+    // Add subtle animation on load
+    hero.style.opacity = '0';
+    hero.style.transition = 'opacity 1.5s ease-in-out';
+
+    // Fade in after a short delay
+    setTimeout(() => {
+        hero.style.opacity = '1';
+    }, 300);
+
+    // Ensure text remains readable with enhanced contrast - WHITE TEXT
+    const heroContent = hero.querySelectorAll('h1, p, .hero-tagline, .hero-description');
+    heroContent.forEach(element => {
+        element.style.color = '#ffffff'; // Pure white text
+        element.style.textShadow = '3px 3px 6px rgba(0, 0, 0, 0.8), 1px 1px 3px rgba(0, 0, 0, 0.9)'; // Strong shadow for readability
+        element.style.position = 'relative';
+        element.style.zIndex = '2';
+    });
+
+    // Special styling for the main SORA title
+    const mainTitle = hero.querySelector('h1');
+    if (mainTitle) {
+        mainTitle.style.color = '#ffffff';
+        mainTitle.style.textShadow = '4px 4px 8px rgba(0, 0, 0, 0.9), 2px 2px 4px rgba(0, 0, 0, 0.8)';
+        mainTitle.style.fontWeight = 'bold';
+    }
+
+    // Special styling for the tagline
+    const tagline = hero.querySelector('.hero-tagline');
+    if (tagline) {
+        tagline.style.color = '#f5f5f5'; // Slightly off-white for tagline
+        tagline.style.textShadow = '2px 2px 6px rgba(0, 0, 0, 0.8)';
+    }
+
+    // Add a subtle gradient overlay for better text readability
+    const overlay = document.createElement('div');
+    overlay.className = 'hero-text-overlay';
+    overlay.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(26, 92, 46, 0.2) 0%,
+            rgba(26, 92, 46, 0.4) 50%,
+            rgba(26, 92, 46, 0.6) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+    `;
+    hero.appendChild(overlay);
+
+    console.log('🖼️ Hero background image applied: asset/image/homehero.png');
+}
+
 // Luxury hover effect for nav links and buttons
 function luxuryHover() {
     const hoverEls = document.querySelectorAll('nav a, button, .luxury-hover');
@@ -560,6 +642,471 @@ function pageTransition() {
     });
 }
 
+// ===== ADVANCED CONTACT FORM HANDLING =====
+function initContactForm() {
+    const contactForm = document.querySelector('.contact-form');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(this);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+
+        // Show loading state
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        // Simulate form submission (replace with actual API call)
+        setTimeout(() => {
+            // Show success message
+            showNotification('Thank you! Your message has been sent. We\'ll respond within 2-4 hours.', 'success');
+
+            // Reset form
+            this.reset();
+
+            // Reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
+    });
+
+    // Form validation
+    const inputs = contactForm.querySelectorAll('input[required], textarea[required], select[required]');
+    inputs.forEach(input => {
+        input.addEventListener('blur', validateInput);
+        input.addEventListener('input', clearErrors);
+    });
+
+    function validateInput(e) {
+        const input = e.target;
+        const value = input.value.trim();
+
+        // Remove existing error
+        clearInputError(input);
+
+        if (!value) {
+            showInputError(input, 'This field is required');
+            return false;
+        }
+
+        // Email validation
+        if (input.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                showInputError(input, 'Please enter a valid email address');
+                return false;
+            }
+        }
+
+        // Phone validation
+        if (input.type === 'tel') {
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            if (!phoneRegex.test(value.replace(/[\s\-\(\)]/g, ''))) {
+                showInputError(input, 'Please enter a valid phone number');
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function showInputError(input, message) {
+        input.classList.add('error');
+
+        let errorElement = input.parentNode.querySelector('.error-message');
+        if (!errorElement) {
+            errorElement = document.createElement('span');
+            errorElement.className = 'error-message';
+            input.parentNode.appendChild(errorElement);
+        }
+        errorElement.textContent = message;
+    }
+
+    function clearInputError(input) {
+        input.classList.remove('error');
+        const errorElement = input.parentNode.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.remove();
+        }
+    }
+
+    function clearErrors(e) {
+        clearInputError(e.target);
+    }
+}
+
+// ===== NOTIFICATION SYSTEM =====
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+        <button class="notification-close" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+
+    // Add notification styles if not present
+    if (!document.querySelector('#notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+            .notification {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 10000;
+                transform: translateX(400px);
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                max-width: 400px;
+            }
+            .notification.show {
+                transform: translateX(0);
+            }
+            .notification-success {
+                border-left: 4px solid #1a5c2e;
+                color: #1a5c2e;
+            }
+            .notification-error {
+                border-left: 4px solid #dc3545;
+                color: #dc3545;
+            }
+            .notification-info {
+                border-left: 4px solid #17a2b8;
+                color: #17a2b8;
+            }
+            .notification-close {
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 5px;
+                color: inherit;
+                opacity: 0.7;
+            }
+            .notification-close:hover {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    document.body.appendChild(notification);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+
+    // Animate in
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+}
+
+// ===== PRICE DISPLAY FORMATTING =====
+function initPriceDisplay() {
+    const priceElements = document.querySelectorAll('.menu-item-price, .price');
+
+    priceElements.forEach(price => {
+        const priceText = price.textContent;
+        if (priceText.includes('$')) {
+            price.innerHTML = `<span class="currency">$</span><span class="amount">${priceText.replace('$', '')}</span>`;
+        }
+    });
+
+    // Add price styling if not present
+    if (!document.querySelector('#price-styles')) {
+        const style = document.createElement('style');
+        style.id = 'price-styles';
+        style.textContent = `
+            .currency {
+                font-size: 0.8em;
+                opacity: 0.8;
+                margin-right: 2px;
+            }
+            .amount {
+                font-weight: bold;
+                color: #d4941e;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// ===== SEARCH FUNCTIONALITY =====
+function initSearchFunctionality() {
+    const searchInput = document.querySelector('#search-input');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function (e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(item => {
+            const title = item.querySelector('.menu-item-title, h3, h4')?.textContent.toLowerCase() || '';
+            const description = item.querySelector('.menu-item-description, p')?.textContent.toLowerCase() || '';
+
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                item.style.display = 'block';
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Show "no results" message if needed
+        const visibleItems = Array.from(menuItems).filter(item => item.style.display !== 'none');
+        handleNoResultsMessage(visibleItems.length === 0, searchTerm);
+    });
+
+    function handleNoResultsMessage(showMessage, searchTerm) {
+        let noResultsMsg = document.querySelector('.no-results-message');
+
+        if (showMessage && searchTerm.length > 0) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.className = 'no-results-message';
+                noResultsMsg.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                        <h3>No results found for "${searchTerm}"</h3>
+                        <p>Try searching for different terms or browse our menu categories.</p>
+                    </div>
+                `;
+                searchInput.parentNode.insertBefore(noResultsMsg, searchInput.nextSibling);
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
+    }
+}
+
+// ===== ENHANCED HEADER EFFECTS =====
+function initAdvancedHeaderEffects() {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add scrolled class
+        if (scrollTop > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Hide header on scroll down, show on scroll up (mobile UX improvement)
+        if (window.innerWidth <= 768) {
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // Add header styles if not present
+    if (!document.querySelector('#advanced-header-styles')) {
+        const style = document.createElement('style');
+        style.id = 'advanced-header-styles';
+        style.textContent = `
+            header.hidden {
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+            header.scrolled {
+                backdrop-filter: blur(20px);
+                background: rgba(26, 92, 46, 0.95);
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// ===== ETHIOPIAN TEXT ANIMATIONS =====
+function initEthiopianTextAnimations() {
+    const ethiopianTexts = document.querySelectorAll('.amharic, .ethiopic-text, .ethiopian-text');
+
+    ethiopianTexts.forEach(text => {
+        text.addEventListener('mouseenter', function () {
+            this.style.transform = 'scale(1.1)';
+            this.style.color = '#d4941e';
+            this.style.textShadow = '0 0 10px rgba(212, 148, 30, 0.5)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        text.addEventListener('mouseleave', function () {
+            this.style.transform = 'scale(1)';
+            this.style.color = '';
+            this.style.textShadow = '';
+        });
+    });
+}
+
+// ===== IMAGE LAZY LOADING SYSTEM =====
+function initImageLazyLoading() {
+    if (!('IntersectionObserver' in window)) return;
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        img.classList.add('lazy');
+        imageObserver.observe(img);
+    });
+
+    // Add lazy loading styles
+    if (!document.querySelector('#lazy-loading-styles')) {
+        const style = document.createElement('style');
+        style.id = 'lazy-loading-styles';
+        style.textContent = `
+            img.lazy {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            img.loaded {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// ORDER ONLINE BUTTON SETUP REMOVED - Using native HTML links instead
+
+// ===== LOGO ENHANCEMENT =====
+function initLogoStyling() {
+    // Add logo styles if not present
+    if (!document.querySelector('#logo-styles')) {
+        const style = document.createElement('style');
+        style.id = 'logo-styles';
+        style.textContent = `
+            .logo {
+                display: flex !important;
+                align-items: center !important;
+                gap: 10px !important;
+                text-decoration: none !important;
+                transition: all 0.3s ease !important;
+            }
+            .logo-img {
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50% !important;
+                object-fit: cover !important;
+                border: 2px solid rgba(245, 230, 211, 0.5) !important;
+                transition: all 0.3s ease !important;
+            }
+            .logo-text {
+                color: #f5e6d3 !important;
+                font-size: 36px !important;
+                font-weight: bold !important;
+                letter-spacing: 2px !important;
+                font-family: 'Playfair Display', serif !important;
+            }
+            .logo:hover .logo-img {
+                transform: scale(1.1) !important;
+                border-color: #ffd700 !important;
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+            }
+            .logo:hover .logo-text {
+                color: #ffd700 !important;
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.3) !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// ===== MENU ITEM INTERACTIONS =====
+function initMenuItemInteractions() {
+    document.addEventListener('click', function (e) {
+        // Menu item order buttons
+        if (e.target.matches('.menu-item-btn, .order-btn')) {
+            e.preventDefault();
+            const menuItem = e.target.closest('.menu-item, .feature-card');
+            const itemTitle = menuItem.querySelector('.menu-item-title, h3, h4')?.textContent || 'Item';
+            const itemPrice = menuItem.querySelector('.menu-item-price, .price')?.textContent || '';
+
+            showNotification(`Added "${itemTitle}" to cart ${itemPrice ? 'for ' + itemPrice : ''}`, 'success');
+
+            // Add visual feedback
+            e.target.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                e.target.style.transform = 'scale(1)';
+            }, 150);
+        }
+
+        // Category buttons
+        if (e.target.matches('.category-btn')) {
+            e.preventDefault();
+            const target = e.target.getAttribute('href');
+            if (target && target.startsWith('#')) {
+                const targetElement = document.querySelector(target);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        // ORDER ONLINE BUTTON FUNCTIONALITY REMOVED - Using native HTML links instead
+    });
+}
+
+// ===== PERFORMANCE OPTIMIZATIONS =====
+function initPerformanceOptimizations() {
+    window.addEventListener('load', () => {
+        // Preload critical resources
+        const criticalImages = [
+            'asset/image/ethiopian-food-hero.jpg',
+            'asset/image/teff-injera.jpg',
+            'asset/image/ethiopian-coffee.jpg',
+            'asset/image/sora-logo.jpg'
+        ];
+
+        criticalImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+    });
+}
+
 // ===== MAIN INITIALIZATION FUNCTION =====
 function initSoraAnimations() {
     // Create loading screen first
@@ -568,6 +1115,8 @@ function initSoraAnimations() {
     // Initialize core animations
     enableSmoothScroll();
     fadeInSections();
+    initHeroBackground(); // Set up hero background image
+    initLogoStyling(); // Set up logo styling and image
     parallaxHero();
     luxuryHover();
     revealOnScroll();
@@ -586,6 +1135,31 @@ function initSoraAnimations() {
     // Blog functionality
     blogCardExpandCollapse();
 
+    // ===== NEW INTEGRATED FEATURES =====
+    // Advanced contact form handling
+    initContactForm();
+
+    // Price display formatting
+    initPriceDisplay();
+
+    // Search functionality
+    initSearchFunctionality();
+
+    // Enhanced header effects
+    initAdvancedHeaderEffects();
+
+    // Ethiopian text animations
+    initEthiopianTextAnimations();
+
+    // Image lazy loading
+    initImageLazyLoading();
+
+    // Menu item interactions
+    initMenuItemInteractions();
+
+    // Performance optimizations
+    initPerformanceOptimizations();
+
     // Initialize typing effect for hero titles
     setTimeout(() => {
         const heroTitle = document.querySelector('.hero h1, .page-hero h1');
@@ -594,6 +1168,14 @@ function initSoraAnimations() {
             typeWriterEffect(heroTitle, originalText, 150);
         }
     }, 1500);
+
+    // Console welcome message
+    console.log(`
+🇪🇹 Welcome to Sora Ethiopian Restaurant ሶራ 🇪🇹
+Authentic Ethiopian food in East York Toronto
+Organic teff injera • Vegan options • Traditional flavors
+Visit us at 1585 Danforth Avenue!
+    `);
 }
 
 // ===== PAGE-SPECIFIC ANIMATIONS =====
@@ -686,6 +1268,126 @@ function initContactPageAnimations() {
             }
         });
     });
+
+    // Initialize interactive map animations
+    initMapInteractions();
+}
+
+// ===== INTERACTIVE MAP FUNCTIONALITY =====
+function initMapInteractions() {
+    const mapFrame = document.querySelector('.map-frame');
+    const mapOverlay = document.querySelector('.map-overlay');
+    const mapMarker = document.querySelector('.map-marker');
+    const locationItems = document.querySelectorAll('.location-item');
+
+    if (mapFrame) {
+        // Enhanced map hover effects
+        mapFrame.addEventListener('mouseenter', () => {
+            mapFrame.style.transform = 'scale(1.05) translateY(-5px)';
+            mapFrame.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.4)';
+
+            if (mapOverlay) {
+                mapOverlay.style.background = 'rgba(13, 58, 26, 0.98)';
+                mapOverlay.style.borderColor = '#ffd700';
+                mapOverlay.style.boxShadow = '0 10px 30px rgba(255, 215, 0, 0.3)';
+            }
+        });
+
+        mapFrame.addEventListener('mouseleave', () => {
+            mapFrame.style.transform = 'scale(1) translateY(0px)';
+            mapFrame.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+
+            if (mapOverlay) {
+                mapOverlay.style.background = 'rgba(13, 58, 26, 0.95)';
+                mapOverlay.style.borderColor = '#daa520';
+                mapOverlay.style.boxShadow = 'none';
+            }
+        });
+
+        // Click to focus on location
+        mapFrame.addEventListener('click', () => {
+            if (mapMarker) {
+                mapMarker.style.animation = 'none';
+                setTimeout(() => {
+                    mapMarker.style.animation = 'bounce 1s ease-in-out 3';
+                }, 10);
+            }
+
+            // Show location ping effect
+            createLocationPing();
+        });
+    }
+
+    // Animate location items on page load
+    locationItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-50px)';
+
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+            item.style.transition = 'all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        }, (index + 1) * 200);
+    });
+
+    // Add click to directions functionality
+    const directionsButtons = document.querySelectorAll('.btn[href*="maps"], .directions-btn');
+    directionsButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Add visual feedback
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 150);
+
+            // Show notification
+            showNotification('Opening directions to Sora Ethiopian Restaurant...', 'info');
+        });
+    });
+}
+
+// Create location ping effect
+function createLocationPing() {
+    const mapContainer = document.querySelector('.map-container');
+    if (!mapContainer) return;
+
+    const ping = document.createElement('div');
+    ping.style.cssText = `
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background: #ffd700;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: locationPing 2s ease-out;
+        pointer-events: none;
+        z-index: 20;
+    `;
+
+    mapContainer.appendChild(ping);
+
+    // Add ping animation
+    if (!document.querySelector('#location-ping-styles')) {
+        const style = document.createElement('style');
+        style.id = 'location-ping-styles';
+        style.textContent = `
+            @keyframes locationPing {
+                0% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    setTimeout(() => ping.remove(), 2000);
 }
 
 // Blog page specific animations
@@ -757,47 +1459,65 @@ function initSportBarAnimations() {
     // Already implemented in the HTML file
 }
 
-// ===== RESPONSIVE HAMBURGER MENU SYSTEM =====
-// jQuery-like functionality for mobile/tablet responsive navigation
+// ===== CLEAN HAMBURGER MENU SYSTEM - YOUR PREFERRED STYLE =====
+// Simple jQuery-like functionality with smooth slide animations
 let menuOpen = false;
 
 function toggleMenu() {
-    const nav = document.querySelector('#nav-menu') || document.querySelector('nav');
-    const hamburger = document.querySelector('.hamburger');
-    const overlay = document.querySelector('.menu-overlay') || createMenuOverlay();
+    const nav = document.querySelector('#nav-menu');
+    const hamburger = document.querySelector('#hamburger');
+
+    if (!nav || !hamburger) {
+        console.error('Navigation elements not found!');
+        return;
+    }
 
     if (!menuOpen) {
-        // Open menu - jQuery-like animate()
-        if (nav) {
-            nav.classList.add('menu-open');
-            nav.style.right = '0';
-        }
-        if (hamburger) {
-            hamburger.classList.add('active');
-        }
-        if (overlay) {
-            overlay.classList.add('active');
-        }
-        document.body.style.overflow = 'hidden'; // Prevent background scroll
+        // Open the menu - slide from right
+        nav.classList.add('open');
+        hamburger.classList.add('active');
         menuOpen = true;
     } else {
-        // Close menu - jQuery-like animate()
-        if (nav) {
-            nav.classList.remove('menu-open');
-            nav.style.right = '-100%';
-        }
-        if (hamburger) {
-            hamburger.classList.remove('active');
-        }
-        if (overlay) {
-            overlay.classList.remove('active');
-        }
-        document.body.style.overflow = 'auto'; // Restore background scroll
+        // Close the menu - slide to right
+        nav.classList.remove('open');
+        hamburger.classList.remove('active');
         menuOpen = false;
     }
 }
 
-function createMenuOverlay() {
+// jQuery-like animate function for navigation
+function animateNavigation(element, targetRight, duration, easing) {
+    const startRight = parseInt(getComputedStyle(element).right) || -200;
+    const distance = targetRight - startRight;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing functions
+        let easedProgress;
+        if (easing === 'ease-out') {
+            easedProgress = 1 - Math.pow(1 - progress, 3); // Cubic ease-out
+        } else if (easing === 'ease-in') {
+            easedProgress = progress * progress * progress; // Cubic ease-in
+        } else {
+            easedProgress = progress; // Linear
+        }
+
+        const currentRight = startRight + (distance * easedProgress);
+        element.style.right = currentRight + 'px';
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+// Make toggleMenu globally available
+window.toggleMenu = toggleMenu; function createMenuOverlay() {
     let overlay = document.querySelector('.menu-overlay');
     if (!overlay) {
         overlay = document.createElement('div');
@@ -808,29 +1528,65 @@ function createMenuOverlay() {
     return overlay;
 }
 
-// Close menu when clicking navigation links (mobile)
+// Enhanced menu closing with smooth link interactions
 function closeMenuOnNavClick() {
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('.main-nav a');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 900 && menuOpen) {
-                toggleMenu();
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && menuOpen) {
+                // Add click animation
+                link.style.transform = 'scale(0.95)';
+                link.style.background = 'rgba(255, 215, 0, 0.2)';
+
+                setTimeout(() => {
+                    link.style.transform = 'scale(1)';
+                    link.style.background = '';
+                }, 150);
+
+                // Close menu with delay for visual feedback
+                setTimeout(() => {
+                    toggleMenu();
+                }, 200);
+
+                // Prevent immediate navigation to show animation
+                if (!link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
+                    e.preventDefault();
+                    setTimeout(() => {
+                        if (link.href && link.href !== '#') {
+                            window.location.href = link.href;
+                        }
+                    }, 400);
+                }
+            }
+        });
+
+        // Add hover effects for menu links
+        link.addEventListener('mouseenter', () => {
+            if (menuOpen) {
+                link.style.transform = 'translateX(10px) scale(1.02)';
+                link.style.textShadow = '0 0 10px rgba(255, 215, 0, 0.5)';
+            }
+        });
+
+        link.addEventListener('mouseleave', () => {
+            if (menuOpen) {
+                link.style.transform = 'translateX(0) scale(1)';
+                link.style.textShadow = 'none';
             }
         });
     });
 }
 
-// Handle window resize - show/hide hamburger based on screen size
+// Enhanced responsive handling with dynamic sizing
 function handleResize() {
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('#nav-menu') || document.querySelector('nav');
+    const hamburger = document.querySelector('#hamburger') || document.querySelector('.hamburger');
+    const mainNav = document.querySelector('.main-nav');
     const overlay = document.querySelector('.menu-overlay');
 
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 768) {
         // Desktop mode - reset menu state
-        if (nav) {
-            nav.classList.remove('menu-open');
-            nav.style.right = 'auto';
+        if (mainNav) {
+            mainNav.classList.remove('active');
         }
         if (hamburger) {
             hamburger.classList.remove('active');
@@ -840,29 +1596,183 @@ function handleResize() {
         }
         document.body.style.overflow = 'auto';
         menuOpen = false;
+    } else {
+        // Mobile/tablet mode - adjust menu size dynamically
+        adjustMenuSizeByScreen();
     }
 }
 
-// Initialize responsive navigation system
+// Dynamic menu sizing based on screen dimensions
+function adjustMenuSizeByScreen() {
+    const mainNav = document.querySelector('.main-nav');
+    if (!mainNav) return;
+
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    // Responsive width calculation
+    let menuWidth;
+    if (screenWidth <= 360) {
+        // Small phones
+        menuWidth = Math.min(300, screenWidth * 0.9);
+    } else if (screenWidth <= 480) {
+        // Medium phones
+        menuWidth = Math.min(340, screenWidth * 0.85);
+    } else if (screenWidth <= 768) {
+        // Large phones / small tablets
+        menuWidth = Math.min(380, screenWidth * 0.8);
+    } else {
+        // Fallback
+        menuWidth = 350;
+    }
+
+    // Apply dynamic width
+    mainNav.style.width = `${menuWidth}px`;
+
+    // Adjust font size based on screen
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        if (screenWidth <= 360) {
+            link.style.fontSize = '1.1rem';
+            link.style.padding = '16px 25px';
+        } else {
+            link.style.fontSize = '1.2rem';
+            link.style.padding = '20px 30px';
+        }
+    });
+
+    console.log(`📱 Menu adjusted for ${screenWidth}px width: ${menuWidth}px menu`);
+}
+
+// Initialize clean navigation system
 function initResponsiveNavigation() {
-    // Create overlay if it doesn't exist
-    createMenuOverlay();
+    // Set up hamburger button click event
+    const hamburger = document.querySelector('#hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+    }
 
-    // Bind navigation link clicks
-    closeMenuOnNavClick();
+    // Close menu when clicking navigation links
+    const navLinks = document.querySelectorAll('#nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuOpen) {
+                toggleMenu();
+            }
+        });
+    });
 
-    // Handle window resize
-    window.addEventListener('resize', handleResize);
-
-    // Handle escape key to close menu
+    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuOpen) {
             toggleMenu();
         }
     });
 
-    // Initialize proper state on load
-    handleResize();
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && menuOpen) {
+            toggleMenu(); // Close menu on desktop
+        }
+    });
+
+    console.log('🍔 Clean navigation system initialized');
+}// ===== CATERING PAGE SPECIFIC FUNCTIONALITY =====
+function initCateringAnimations() {
+    // Counter animation for trust badges
+    const counters = document.querySelectorAll('.trust-number');
+
+    function animateCounter(element) {
+        const originalText = element.textContent;
+
+        // Handle different number formats
+        if (originalText.includes('-')) {
+            // For ranges like "10-1000", just add a scaling animation
+            element.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 500);
+            return;
+        }
+
+        const target = parseInt(originalText);
+        if (isNaN(target)) return;
+
+        const duration = 2000; // 2 seconds
+        const start = 0;
+        const startTime = Date.now();
+
+        function updateCounter() {
+            const currentTime = Date.now();
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = Math.floor(start + (target - start) * easeOutQuart);
+
+            if (originalText.includes('+')) {
+                element.textContent = current + '+';
+            } else if (originalText.includes('★')) {
+                element.textContent = current + '★';
+            } else {
+                element.textContent = current;
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+
+        updateCounter();
+    }    // Intersection Observer for counter animation
+    if (counters.length > 0) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.7 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+    }
+
+    // Service icon bounce animation
+    const serviceIcons = document.querySelectorAll('.service-icon');
+    serviceIcons.forEach((icon, index) => {
+        icon.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    // Package card hover enhancement
+    const packageCards = document.querySelectorAll('.package-card');
+    packageCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', () => {
+            if (card.classList.contains('featured')) {
+                card.style.transform = 'scale(1.05)';
+            } else {
+                card.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    });
+
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    console.log('🍽️ Catering page animations initialized');
 }
 
 // Make toggleMenu globally available
@@ -871,8 +1781,149 @@ window.toggleMenu = toggleMenu;
 // Initialize everything when DOM loads
 document.addEventListener('DOMContentLoaded', () => {
     initSoraAnimations();
-    initResponsiveNavigation(); // Initialize responsive menu system
+    initResponsiveNavigation(); // Initialize enhanced responsive menu system
+
+    // Initialize responsive sizing immediately
+    setTimeout(() => {
+        adjustMenuSizeByScreen();
+    }, 100);
+
+    // Initialize catering-specific features if on catering page
+    if (document.querySelector('.catering-hero')) {
+        initCateringAnimations();
+    }
+
     setTimeout(() => {
         initPageSpecificAnimations();
     }, 1000);
+
+    console.log('🚀 SORA Enhanced Navigation System Ready!');
+});
+
+// =====================================================
+// ABOUT PAGE SPECIFIC FUNCTIONS - EXTRACTED FROM HTML
+// =====================================================
+
+// Toggle mobile navigation menu
+function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.mobile-overlay');
+    const body = document.body;
+
+    nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('active');
+    body.classList.toggle('menu-open');
+}
+
+// Initialize about page menu functionality
+function initAboutPageMenu() {
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            const nav = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+    });
+}
+
+// Initialize about page functionality when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutPageMenu);
+} else {
+    initAboutPageMenu();
+}
+
+/* ============================================
+   MENU PAGE SPECIFIC FUNCTIONS
+   ============================================ */
+
+// Menu filtering functionality
+function initMenuPageFunctionality() {
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const menuSections = document.querySelectorAll('.menu-section');
+
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Remove active class from all tabs
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+
+            const category = this.textContent.toLowerCase();
+
+            // Show/hide sections based on category
+            menuSections.forEach(section => {
+                if (category === 'all items') {
+                    section.style.display = 'block';
+                } else if (category === 'meat dishes' && section.querySelector('.section-title').textContent === 'Meat Dishes') {
+                    section.style.display = 'block';
+                } else if ((category === 'vegetarian' || category === 'vegan fasting') && section.querySelector('.section-title').textContent === 'Vegetarian & Vegan') {
+                    section.style.display = 'block';
+                } else if (category === 'combos' && section.classList.contains('combo-section')) {
+                    section.style.display = 'block';
+                } else if (category === 'beverages' && section.querySelector('.section-title').textContent === 'Beverages') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Add smooth scroll reveal animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all menu items
+    document.querySelectorAll('.menu-item, .combo-card, .beverage-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'all 0.6s ease';
+        observer.observe(item);
+    });
+
+    // Add magnetic cursor effect
+    if (window.createMagneticCursor) {
+        createMagneticCursor();
+    }
+
+    // Add particle system
+    if (window.createParticleSystem) {
+        createParticleSystem();
+    }
+
+    // Add card tilt effects
+    if (window.addCardTiltEffect) {
+        document.querySelectorAll('.menu-item').forEach(addCardTiltEffect);
+    }
+}
+
+// Initialize menu page functionality when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if we're on the menu page
+    if (document.querySelector('.menu-categories') || document.querySelector('.category-tab')) {
+        initMenuPageFunctionality();
+    }
 });

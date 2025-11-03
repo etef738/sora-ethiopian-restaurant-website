@@ -1,1 +1,0 @@
-Testing hamburger menu fixes for responsive design
